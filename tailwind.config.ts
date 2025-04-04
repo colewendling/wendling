@@ -10,6 +10,10 @@ const config: Config = {
       colors: {
         primary: "#1a1a1a",
         background: "#ffffff",
+        orange: "#ff4400",
+        cyan: "rgb(0,255,214)",
+        ruby: "rgb(230,0,35)",
+        grey: "rgb(188,188,188)",
       },
       fontFamily: {
         abcMono: ["var(--font-ABCFavoritMono)", "sans-serif"],
