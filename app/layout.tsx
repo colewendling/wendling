@@ -2,6 +2,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
+import NavBar from "../components/NavBar";
 
 const abcFavoritMono = localFont({
   src: [
@@ -38,7 +39,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${abcFavoritMono.variable} ${opticianSans.variable} ${robotoMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <div className="grid grid-cols-1 md:grid-cols-5 min-h-screen">
+          {/* Sidebar/nav */}
+          <div className="md:col-span-1">
+            <NavBar />
+          </div>
+          {/* Main content */}
+          <main className="md:col-span-4 p-6">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   );
 }

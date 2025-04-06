@@ -6,6 +6,13 @@
 /* — Global element styles for easy tweaking — */
 @layer base {
   body {
-    @apply font-sans;
+    @apply font-abcMono;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-optician;
+  }
+
+  code, pre, kbd, samp {
+    @apply font-robotoMono;
   }
 }
