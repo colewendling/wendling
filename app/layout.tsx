@@ -1,5 +1,5 @@
 // app/layout.tsx
-import "./globals.css";
+import "../styles/globals.css";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import NavBar from "../components/NavBar";
