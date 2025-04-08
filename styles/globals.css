@@ -16,3 +16,15 @@
     @apply font-robotoMono;
   }
 }
+
+@keyframes waveAnimation {
+  0%, 100% { transform: translate(0, 0) scale(1.05); }
+  25% { transform: translate(-2%, 2%) scale(1.1); }
+  50% { transform: translate(2%, -2%) scale(1.08); }
+  75% { transform: translate(-1%, 1%) scale(1.1); }
+}
+
+.animated-background {
+  animation: waveAnimation 60s infinite ease-in-out alternate;
+  filter: contrast(105%) brightness(95%) blur(8px);
+}
