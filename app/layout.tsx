@@ -1,8 +1,11 @@
 // app/layout.tsx
+import type { Metadata } from "next";
+
 import "../styles/globals.css";
+
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
-import NavBar from "../components/NavBar";
+import { Navbar } from "@/components/NavBar";
 
 const abcFavoritMono = localFont({
   src: [
@@ -28,9 +31,9 @@ const robotoMono = localFont({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Wendling",
-  description: "…",
+export const metadata: Metadata = {
+  title: "Cole Wendling - Fullstack Software Engineer",
+  description: "Portfolio site for Cole Wendling.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -39,17 +42,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${abcFavoritMono.variable} ${opticianSans.variable} ${robotoMono.variable}`}
     >
-      <body>
-        <div className="grid grid-cols-1 md:grid-cols-5 min-h-screen">
-          {/* Sidebar/nav */}
-          <div className="md:col-span-1">
-            <NavBar />
-          </div>
-          {/* Main content */}
-          <main className="md:col-span-4 p-6">
-            {children}
-          </main>
-        </div>
+      <body className="min-h-screen bg-black text-white overflow-x-hidden">
+        <Navbar />
+        <main className="min-h-screen px-6 md:pl-[20%] md:px-8">
+          {children}
+        </main>
       </body>
     </html>
   );

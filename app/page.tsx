@@ -1,23 +1,15 @@
-// app/page.tsx
-import React from "react";
+import { AnimatedBlurBackground } from "@/components/AnimatedBlurBackground";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden min-h-screen">
-      <div className="animated-bg" />
-      <main className="relative p-8 space-y-6">
-        <h1 className="text-4xl">
-          ABCFavoritMono – The quick brown fox
-        </h1>
-        <p className="text-lg">
-          Optician Sans – Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <div className="relative min-h-screen">
+      <AnimatedBlurBackground />
+      <div className="relative z-10 container mx-auto py-20 px-6 text-white">
+        <h1 className="text-5xl md:text-7xl font-bold">Welcome</h1>
+        <p className="mt-4 text-xl md:text-2xl">
+          Cole Wendling | Fullstack Software Engineer
         </p>
-        <pre className="text-base bg-gray-100 p-4 rounded">
-          {`function hello() {
-            console.log("Roboto Mono!");
-          }`}
-        </pre>
-      </main>
+      </div>
     </div>
   );
 }
