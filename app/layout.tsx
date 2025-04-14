@@ -1,11 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-
 import "../styles/globals.css";
-
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/NavBar";
+import HomeBackground from "@/components/HomeBackground";
 
 const abcFavoritMono = localFont({
   src: [
@@ -43,6 +42,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${abcFavoritMono.variable} ${opticianSans.variable} ${robotoMono.variable}`}
     >
       <body className="min-h-screen bg-black text-white overflow-x-hidden">
+        <HomeBackground />
         <Navbar />
         <main className="min-h-screen px-6 md:pl-[20%] md:px-8">
           {children}
