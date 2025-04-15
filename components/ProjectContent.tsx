@@ -1,3 +1,5 @@
+// components/ProjectContent.tsx
+
 import React from "react";
 import { ContentBlock } from "@/data/projects";
 import Image from "next/image";

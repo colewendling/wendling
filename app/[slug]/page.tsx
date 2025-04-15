@@ -1,3 +1,5 @@
+// app/[slug]/page.tsx
+
 import { projects } from "@/data/projects";
 import { ProjectContent } from "@/components/ProjectContent";
 import Image from "next/image";

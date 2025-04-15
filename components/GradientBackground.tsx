@@ -1,3 +1,5 @@
+// components/GradientBackground.tsx
+
 import React from "react";
 
 interface GradientBackgroundProps {
@@ -14,8 +16,8 @@ export const GradientBackground: React.FC<GradientBackgroundProps> = ({
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col" style={gradientStyle}>
-      {children}
+    <div className="fixed inset-0 flex flex-col" style={gradientStyle}>
+      <div className="overflow-auto flex-1">{children}</div>
     </div>
   );
 };

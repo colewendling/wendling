@@ -1,3 +1,5 @@
+// components/Navbar.tsx
+
 "use client";
 
 import Link from "next/link";
@@ -12,8 +14,15 @@ export const Navbar = () => {
       {/* Desktop Navbar */}
       <nav className="hidden md:flex flex-col fixed top-0 left-0 backdrop-blur-md bg-black bg-opacity-20 border-r border-gray-700 py-8 px-4 justify-between h-screen w-[20%] z-50 items-end">
         <div className="text-right">
-          <Link href="/" className="text-2xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight">COLE WENDLING</Link>
-          <p className="mt-2 text-sm tracking-widest">FULLSTACK SOFTWARE ENGINEER</p>
+          <Link
+            href="/"
+            className="text-2xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight"
+          >
+            COLE WENDLING
+          </Link>
+          <p className="mt-2 text-sm tracking-widest">
+            FULLSTACK SOFTWARE ENGINEER
+          </p>
 
           <div className="mt-10 border-t border-b border-white py-4 text-xs tracking-tight">
             <p className="text-xs">Ruby | JavaScript | React</p>
@@ -80,29 +89,57 @@ export const Navbar = () => {
             <X className="text-white" size={24} />
           </button>
           <div className="flex flex-col items-center space-y-6 text-white tracking-widest">
-            <Link href="/" onClick={() => setIsOpen(false)} className="text-2xl no-underline hover:text-gray-400">
+            <Link
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="text-2xl no-underline hover:text-gray-400"
+            >
               HOME
             </Link>
-            <Link href="/zenterest" onClick={() => setIsOpen(false)} className="text-2xl no-underline hover:text-gray-400">
+            <Link
+              href="/zenterest"
+              onClick={() => setIsOpen(false)}
+              className="text-2xl no-underline hover:text-gray-400"
+            >
               ZENTEREST
             </Link>
-            <Link href="/babelbuilder" onClick={() => setIsOpen(false)} className="text-2xl no-underline hover:text-gray-400">
+            <Link
+              href="/babelbuilder"
+              onClick={() => setIsOpen(false)}
+              className="text-2xl no-underline hover:text-gray-400"
+            >
               BABELBUILDER
             </Link>
-            <Link href="/onda" onClick={() => setIsOpen(false)} className="text-2xl no-underline hover:text-gray-400">
+            <Link
+              href="/onda"
+              onClick={() => setIsOpen(false)}
+              className="text-2xl no-underline hover:text-gray-400"
+            >
               ONDA
             </Link>
-            <Link href="/resume" onClick={() => setIsOpen(false)} className="text-2xl no-underline hover:text-gray-400">
+            <Link
+              href="/resume"
+              onClick={() => setIsOpen(false)}
+              className="text-2xl no-underline hover:text-gray-400"
+            >
               RESUME
             </Link>
             <div className="flex flex-col items-center space-y-4 mt-8">
-              <Link href="https://github.com/colewendling" target="_blank" className="flex items-center space-x-2 no-underline hover:text-gray-400">
+              <Link
+                href="https://github.com/colewendling"
+                target="_blank"
+                className="flex items-center space-x-2 no-underline hover:text-gray-400"
+              >
                 <div className="bg-white rounded-full p-1">
                   <Github className="text-black" size={18} />
                 </div>
                 <span>GITHUB</span>
               </Link>
-              <Link href="https://www.linkedin.com/in/colewendling/" target="_blank" className="flex items-center space-x-2 no-underline hover:text-gray-400">
+              <Link
+                href="https://www.linkedin.com/in/colewendling/"
+                target="_blank"
+                className="flex items-center space-x-2 no-underline hover:text-gray-400"
+              >
                 <div className="bg-white rounded-lg p-1">
                   <Linkedin className="text-black" size={18} />
                 </div>

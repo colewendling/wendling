@@ -1,3 +1,5 @@
+// app/[slug]/layout.tsx
+
 import { GradientBackground } from "@/components/GradientBackground";
 import { projects } from "@/data/projects";
 
@@ -14,7 +16,7 @@ export default function ProjectLayout({
     <GradientBackground
       colors={project?.gradientColors || ["#111", "#222", "#333"]}
     >
-      <div className="min-h-screen pl-0 md:pl-[20%]">{children}</div>
+      <div className="min-h-screen px-6 md:pl-[20%] md:px-8">{children}</div>
     </GradientBackground>
   );
 }
