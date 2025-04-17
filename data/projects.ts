@@ -71,4 +71,93 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "babelbuilder",
+    title: "Babel Builder",
+    thumbnail: "/images/projects/babelbuilder/tn-babelbuilder.png",
+    images: [
+      "/images/projects/babelbuilder/babelbuilder-01.gif",
+      "/images/projects/babelbuilder/babelbuilder-02.png",
+    ],
+    gradientColors: ["rgba(73, 73, 73, 0.74)", "rgba(27, 150, 127, 0.94)", "rgba(49, 109, 164, 0.98)"],
+    liveUrl: "https://www.babelbuilder.com/",
+    githubUrl: "https://github.com/colewendling/BabelBuilder",
+    description:
+      "Babel Builder is a tower building game where a user must time their placement of flying tower segments to ensure that their tower grows as tall as possible. If the player’s segment timing is off an overhang occurs and that part of the segment crumbles making it progressively harder as the game progresses!",
+    contentBlocks: [
+      {
+        type: "text",
+        content:
+          "Type: Tower building simulation game\n\nSoftware: JavaScript, Cannon.js, Canvas",
+      },
+      {
+        type: "text",
+        content:
+          "Integrate Cannon.js to implement physics for falling blocks and fog game mechanic to simulate atmosphere as tower grows.",
+      },
+      {
+        type: "text",
+        content:
+          "Implement code to gradually change hue value of tower segments as the game progresses.",
+      },
+      {
+        type: "image",
+        src: "/images/projects/babelbuilder/babelbuilder-01.gif",
+        alt: "Gameplay demo of Babel Builder",
+      },
+      {
+        type: "image",
+        src: "/images/projects/babelbuilder/babelbuilder-02.png",
+        alt: "Tower building screen in Babel Builder",
+      },
+    ],
+  },
+  {
+    slug: "onda",
+    title: "Onda",
+    thumbnail: "/images/projects/onda/tn-onda.png",
+    images: [
+      "/images/projects/onda/onda-01.jpg",
+      "/images/projects/onda/onda-02.png",
+      "/images/projects/onda/onda-03.jpg",
+      "/images/projects/onda/onda-04.jpg",
+    ],
+    gradientColors: ["rgba(73, 73, 73, 1)", "rgba(150, 82, 27, 1)", "rgba(62, 59, 52, 0.98)"],
+    liveUrl: "https://magazine.texasarchitects.org/2019/02/28/mixed-media/",
+    githubUrl: "",
+    description:
+      "ONDA - Spanish for electromagnetic wave, is a digitally fabricated installation meant to showcase the power of code to create procedurally generated parametric architecture. Featured on the cover of Texas Architect Monthly and installed permanently at the University of Texas campus in Austin.",
+    contentBlocks: [
+      {
+        type: "text",
+        content:
+          "Type: Digitally-Fabricated Wall\nSize: 20’ l x 8’ h x 6”\nLocation: University of Texas Campus - Austin, Texas\n\nSoftware: JavaScript, Grasshopper, G-Code",
+      },
+      {
+        type: "text",
+        content:
+          "Recode the assembly into manageable block segments with 180+ script-generated CNC sheet layouts to minimize material waste.",
+      },
+      {
+        type: "image",
+        src: "/images/projects/onda/onda-01.jpg",
+        alt: "Onda installation overview",
+      },
+      {
+        type: "image",
+        src: "/images/projects/onda/onda-02.png",
+        alt: "Detail shot of Onda segments",
+      },
+      {
+        type: "image",
+        src: "/images/projects/onda/onda-03.jpg",
+        alt: "Parametric assembly blocks for Onda",
+      },
+      {
+        type: "image",
+        src: "/images/projects/onda/onda-04.jpg",
+        alt: "Onda installation at UT Austin",
+      },
+    ],
+  },
 ];
