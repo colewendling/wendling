@@ -20,6 +20,12 @@ const config: Config = {
         optician: ["var(--font-OpticianSans)", "sans-serif"],
         robotoMono: ["var(--font-RobotoMono)", "monospace"],
       },
+      boxShadow: {
+        thumbnails: "20px 20px 50px rgba(0, 0, 0, 0.83), -20px -20px 60px rgba(110, 110, 110, 0)",
+      },
+      backgroundColor: {
+        "thumbnails-bgcolor": "rgba(0, 0, 0, 0.87)",
+      },
     },
   },
   plugins: [],

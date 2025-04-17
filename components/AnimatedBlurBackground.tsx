@@ -37,7 +37,7 @@ const AnimatedBlurBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="gradient-bg fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div className="gradient-bg fixed inset-0 z-[-10] overflow-hidden pointer-events-none">
       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
           <filter id="goo">
