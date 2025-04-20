@@ -1,11 +1,11 @@
-// components/AnimatedBlurBackground.tsx
+// components/AnimatedBackground.tsx
 
 "use client";
 
 import React, { useEffect, useRef } from "react";
 
 
-const AnimatedBlurBackground: React.FC = () => {
+const AnimatedBackground: React.FC = () => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -69,4 +69,4 @@ const AnimatedBlurBackground: React.FC = () => {
   );
 };
 
-export default AnimatedBlurBackground;
+export default AnimatedBackground;
