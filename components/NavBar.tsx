@@ -12,7 +12,7 @@ export const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex flex-col fixed top-0 left-0 backdrop-blur-md bg-black bg-opacity-20 border-r border-gray-700 py-8 px-4 justify-between h-screen w-[20%] z-50 items-end">
+      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-opacity-20 border-r py-8 px-4 justify-between h-full z-50 items-end overflow-y-auto text-white">
         <div className="text-right">
           <Link
             href="/"
@@ -20,7 +20,7 @@ export const Navbar = () => {
           >
             COLE WENDLING
           </Link>
-          <p className="mt-2 text-sm tracking-widest">
+          <p className="mt-2 text-sm tracking-widest opacity-70">
             FULLSTACK SOFTWARE ENGINEER
           </p>
 
