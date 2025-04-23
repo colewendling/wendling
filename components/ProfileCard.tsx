@@ -1,37 +1,44 @@
 // components/ProfileCard.tsx
 "use client";
 
-import Image from "next/image";
-import React from "react";
+import React from "react"
+import TechIconGrid from "./TechIconGrid";
 
 const ProfileCard: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-      
-      {/* Profile image */}
-      <div className="flex justify-center items-center">
-        <Image
-          src="/images/general/profile.png"
-          alt="Profile"
-          width={400}
-          height={400}
-          className="rounded-lg scroll-transition-fade w-full h-auto md:h-full object-cover max-w-sm"
-        />
+    <div className="flex flex-col md:flex-row items-stretch text-white">
+      <div className="w-full md:w-1/3 flex items-center justify-center px-4 md:px-8">
+        <div className="w-full">
+          <img
+            src="/images/general/profile.png"
+            alt="Profile"
+            className="object-cover shadow-card rounded-2xl max-h-full"
+          />
+        </div>
       </div>
 
       {/* Text and icon grid */}
-      <div className="flex flex-col justify-between h-full">
-        <p className="mb-4">
+      <div className="flex flex-col justify-between w-full md:w-2/3 px-4 md:px-8">
+        <p>
           I am a Fullstack Software engineer skilled in React, Redux, Javascript
           & Ruby combined with a full knowledge of backend structural logic with
           PostgreSQL and Ruby on Rails.
         </p>
 
-        <div className="grid grid-cols-5 grid-rows-2 gap-2 mb-4">
-          {Array.from({ length: 10 }).map((_, idx) => (
-            <div key={idx} className="aspect-square bg-gray-600 rounded-lg" />
-          ))}
-        </div>
+        <TechIconGrid
+          icons={[
+            { src: "/icons/css.svg", color: "text-red-500" },
+            { src: "/icons/git.svg", color: "text-yellow-400" },
+            { src: "/icons/html5.svg", color: "text-blue-500" },
+            { src: "/icons/javascript.svg" }, // no color fallback
+            { src: "/icons/nextdotjs.svg", color: "text-green-400" },
+            { src: "/icons/postgresql.svg", color: "text-indigo-500" },
+            { src: "/icons/react.svg", color: "text-pink-500" },
+            { src: "/icons/ruby.svg", color: "text-gray-300" },
+            { src: "/icons/tailwindcss.svg", color: "text-amber-400" },
+            { src: "/icons/vercel.svg", color: "text-white" },
+          ]}
+        />
 
         <p>
           Solving complex problems in clever and elegant ways is my passion. I
