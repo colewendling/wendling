@@ -183,4 +183,7 @@
   .scroll-transition-fade {
     transition: transform 1s ease-in-out, opacity 0.8s ease-in-out;
   }
+  .dev {
+    border: 1px solid red;
+  }
 }
