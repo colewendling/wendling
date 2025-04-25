@@ -18,7 +18,7 @@ export default function Section({ variant = "solid", children }: SectionProps) {
     <section className={`relative ${bgClass}`}>
       {variant === "animated" && <AnimatedBlurBackground />}
       <div className="pl-0 md:pl-[20vw] relative">
-        <div className="py-10 px-20">
+        <div className="py-10 px-10">
           {children}
           </div>
       </div>
