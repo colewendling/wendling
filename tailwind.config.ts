@@ -24,7 +24,7 @@ const config: Config = {
         card: "20px 20px 50px rgba(0, 0, 0, 0.83), -20px -20px 60px rgba(110, 110, 110, 0)",
       },
       backgroundColor: {
-        "solid": "rgba(0, 0, 0, 0.87)",
+        "solid": "rgba(0, 0, 0, 0.60)",
       },
     },
   },
