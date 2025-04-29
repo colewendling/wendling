@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className="flex flex-col min-h-screen">
         <div className="relative flex-1 min-h-screen">
-          <main className="absolute inset-0 overflow-auto">{children}</main>
+          <main className="flex-1 overflow-auto">{children}</main>
           <div className="absolute inset-x-0 top-0 w-[20%] h-[100%]">
             <Navbar />
           </div>
