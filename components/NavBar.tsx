@@ -12,33 +12,51 @@ export const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-opacity-20 border-r py-8 px-4 justify-between h-full z-50 items-end overflow-y-auto text-white">
+      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-opacity-20 border-r py-8 px-2 justify-start h-full z-50 items-end overflow-y-auto text-white space-y-6">
+        {/* Header */}
         <div className="text-right">
           <Link
             href="/"
-            className="text-2xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight"
+            className="text-3xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight break-words"
           >
             COLE WENDLING
           </Link>
-          <p className="mt-2 text-sm tracking-widest opacity-70">
+          <p className="text-base lg:text-lg tracking-tight opacity-70 break-words">
             FULLSTACK SOFTWARE ENGINEER
           </p>
 
-          <div className="mt-10 border-t border-b border-white py-4 text-xs tracking-tight">
-            <p className="text-xs">Ruby | JavaScript | React</p>
-            <p className="text-xs">Redux | SQL | MongoDB</p>
-            <p className="text-xs">Mongoose | Express | Node.js</p>
-            <p className="text-xs">Rails | HTML | CSS</p>
+          {/* Skills */}
+          <div className="mt-10 border-t border-b border-white/50 py-3 grid gap-x-2 gap-y-1 text-sm lg:text-sm font-medium tracking-tight justify-end text-right whitespace-nowrap grid-cols-2">
+            {[
+              "Next.js",
+              "Vercel",
+              "React",
+              "Tailwind",
+              "JavaScript",
+              "Git",
+              "PostgreSQL",
+              "Ruby",
+              "TypeScript",
+              "HTML",
+              "CSS",
+            ].map((skill) => (
+              <span key={skill}>
+                {skill}
+                <span className="mx-1 text-white/50">|</span>
+              </span>
+            ))}
           </div>
         </div>
-        <div className="flex flex-col items-end mb-6">
+
+        {/* Links */}
+        <div className="flex flex-col items-end mb-4 pt-[30px]">
           <Link
             href="https://github.com/colewendling"
             target="_blank"
             className="mb-4"
           >
             <div className="bg-white rounded-full p-1">
-              <Github className="text-black" size={18} />
+              <Github className="text-black" size={16} />
             </div>
           </Link>
           <Link
@@ -47,7 +65,7 @@ export const Navbar = () => {
             className="mb-4"
           >
             <div className="bg-white rounded-lg p-1">
-              <Linkedin className="text-black" size={18} />
+              <Linkedin className="text-black" size={16} />
             </div>
           </Link>
           <Link
@@ -57,7 +75,9 @@ export const Navbar = () => {
             RESUME
           </Link>
         </div>
-        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest">
+
+        {/* Project Page Links */}
+        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[150px] max-[1138px]:pt-[50px]">
           <Link href="/zenterest" className="hover:text-gray-400 no-underline">
             ZENTEREST
           </Link>
