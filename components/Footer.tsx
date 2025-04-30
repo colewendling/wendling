@@ -7,15 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-slate-800 to-primary text-white px-10 py-20">
       <div className="flex flex-col md:flex-row justify-evenly items-center md:items-start gap-12 py-4 md:gap-6">
-        {/* Logo and Site Name */}
-        <div className="flex items-center justify-center">
-          <img
-            src="/logos/logo-white.svg"
-            alt="Texas Waterway Logo"
-            className="size-20"
-          />
-        </div>
-
+        
         {/* Contact Info */}
         <div className="flex flex-col gap-2 items-center md:items-start">
           <h3 className="text-lg font-bold mb-3">Developer</h3>
@@ -65,7 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-sm mt-10">
-        Texas Waterway &copy; 2024 - All Rights Reserved
+        Cole Wendling &copy; 2025 - All Rights Reserved
       </div>
     </footer>
   );
