@@ -11,7 +11,7 @@ type SectionProps = {
 export default function Section({ variant = "solid", children }: SectionProps) {
   // adjust these Tailwind classes to suit your theme
   let bgClass = "";
-  if (variant === "solid") bgClass = "bg-slate-800";
+  if (variant === "solid") bgClass = "bg-solid";
   else if (variant === "transparent") bgClass = "bg-transparent";
 
   return (
