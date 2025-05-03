@@ -20,6 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const isGif = thumbnail.toLowerCase().endsWith('.gif');
 
   useEffect(() => {
     const el = ref.current;
@@ -47,7 +48,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             : "opacity-0 translate-y-8"
         }`}
       >
-        <Image src={thumbnail} alt={title} fill className="object-cover" />
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          unoptimized={isGif}
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-lg font-semibold">
           {title}
         </div>
