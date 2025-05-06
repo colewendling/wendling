@@ -5,28 +5,30 @@
 import Link from "next/link";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-opacity-20 border-r py-8 px-2 justify-start h-full z-50 items-end overflow-y-auto text-white space-y-6">
+      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-black/5 py-8 px-4 justify-start h-full z-50 items-end overflow-y-auto text-white space-y-6">
         {/* Header */}
         <div className="text-right">
           <Link
             href="/"
-            className="text-3xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight break-words"
+            className="text-2xl font-optician font-semibold no-underline hover:text-gray-400 leading-tight break-words"
           >
             COLE WENDLING
           </Link>
-          <p className="text-base lg:text-lg tracking-tight opacity-70 break-words">
+          <p className="text-base lg:text-md tracking-tight opacity-70 break-words">
             FULLSTACK SOFTWARE ENGINEER
           </p>
 
           {/* Skills */}
-          <div className="mt-10 border-t border-b border-white/50 py-3 grid gap-x-2 gap-y-1 text-sm lg:text-sm font-medium tracking-tight justify-end text-right whitespace-nowrap grid-cols-2">
+          <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter text-right">
             {[
               "Next.js",
               "Vercel",
@@ -39,13 +41,8 @@ export const Navbar = () => {
               "TypeScript",
               "HTML",
               "CSS",
-            ].map((skill) => (
-              <span key={skill}>
-                {skill}
-                <span className="mx-1 text-white/50">|</span>
-              </span>
-            ))}
-          </div>
+            ].join(" | ")}
+          </p>
         </div>
 
         {/* Links */}
@@ -64,7 +61,7 @@ export const Navbar = () => {
             target="_blank"
             className="mb-4"
           >
-            <div className="bg-white rounded-lg p-1">
+            <div className="bg-white rounded-full p-1">
               <Linkedin className="text-black" size={16} />
             </div>
           </Link>
@@ -77,17 +74,17 @@ export const Navbar = () => {
         </div>
 
         {/* Project Page Links */}
-        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[150px] max-[1138px]:pt-[50px]">
-          <Link href="/zenterest" className="hover:text-gray-400 no-underline">
+        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[250px] max-[1130px]:pt-[200px]">
+          <Link href="/zenterest" className={`hover:text-gray-400 no-underline${pathname === "/zenterest" ? " text-gray-400" : ""}`}>
             ZENTEREST
           </Link>
           <Link
             href="/babelbuilder"
-            className="hover:text-gray-400 no-underline"
+            className={`hover:text-gray-400 no-underline${pathname === "/babelbuilder" ? " text-gray-400" : ""}`}
           >
             BABELBUILDER
           </Link>
-          <Link href="/onda" className="hover:text-gray-400 no-underline">
+          <Link href="/onda" className={`hover:text-gray-400 no-underline${pathname === "/onda" ? " text-gray-400" : ""}`}>
             ONDA
           </Link>
         </div>
@@ -112,35 +109,35 @@ export const Navbar = () => {
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className="text-2xl no-underline hover:text-gray-400"
+              className={`text-2xl no-underline${pathname === "/" ? " text-gray-400" : " hover:text-gray-400"}`}
             >
               HOME
             </Link>
             <Link
               href="/zenterest"
               onClick={() => setIsOpen(false)}
-              className="text-2xl no-underline hover:text-gray-400"
+              className={`text-2xl no-underline${pathname === "/zenterest" ? " text-gray-400" : " hover:text-gray-400"}`}
             >
               ZENTEREST
             </Link>
             <Link
               href="/babelbuilder"
               onClick={() => setIsOpen(false)}
-              className="text-2xl no-underline hover:text-gray-400"
+              className={`text-2xl no-underline${pathname === "/babelbuilder" ? " text-gray-400" : " hover:text-gray-400"}`}
             >
               BABELBUILDER
             </Link>
             <Link
               href="/onda"
               onClick={() => setIsOpen(false)}
-              className="text-2xl no-underline hover:text-gray-400"
+              className={`text-2xl no-underline${pathname === "/onda" ? " text-gray-400" : " hover:text-gray-400"}`}
             >
               ONDA
             </Link>
             <Link
               href="/resume"
               onClick={() => setIsOpen(false)}
-              className="text-2xl no-underline hover:text-gray-400"
+              className={`text-2xl no-underline${pathname === "/resume" ? " text-gray-400" : " hover:text-gray-400"}`}
             >
               RESUME
             </Link>
