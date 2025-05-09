@@ -27,12 +27,25 @@
   }
 }
 
+/* Component classes for project content text */
+@layer components {
+  .body-text {
+    @apply mb-8 text-base leading-[1.3] text-[rgba(189,189,189,0.82)] font-abcMono;
+  }
+  .body-text-full {
+    @apply mb-8 text-lg font-light leading-[1.3] text-[rgba(189,189,189,0.82)] font-abcMono;
+  }
+  .image-title-text {
+    @apply mb-3 text-sm md:text-lg font-light leading-[1.3] text-[rgba(189,189,189,0.82)] font-optician uppercase;
+  }
+}
+
 :root {
   --mouse-x: 0;
   --mouse-y: 0;
 
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
+  --color-bg1: rgb(11, 36, 70);
+  --color-bg2: rgb(200, 147, 43);
   --color1: 18, 113, 255;
   --color2: 221, 74, 255;
   --color3: 100, 220, 255;

@@ -1,3 +1,5 @@
+// tailwind.config.ts
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -14,6 +16,7 @@ const config: Config = {
         cyan: "rgb(0,255,214)",
         ruby: "rgb(230,0,35)",
         grey: "rgb(188,188,188)",
+        navy: "rgb(56,118,144)",
       },
       fontFamily: {
         abcMono: ["var(--font-ABCFavoritMono)", "sans-serif"],
@@ -24,7 +27,7 @@ const config: Config = {
         card: "20px 20px 50px rgba(0, 0, 0, 0.83), -20px -20px 60px rgba(110, 110, 110, 0)",
       },
       backgroundColor: {
-        "solid": "rgba(0, 0, 0, 0.60)",
+        solid: "rgba(0, 0, 0, 0.60)",
       },
     },
   },
