@@ -20,7 +20,7 @@ export type ContentBlock =
   | { type: "video"; src: string; title?: string }
   | { type: "text-full"; content: string }
   | { type: "image-full"; title: string; src: string; alt?: string }
-  | { type: "code"; code: string; keyColor?: string; valueColor?: string }
+  | { type: "code"; title: string; code: Record<string, any>; keyColor: string; valueColor: string; punctuationColor: string }
   | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[] };
 
 export const projects: Project[] = [
@@ -89,27 +89,33 @@ export const projects: Project[] = [
         right: [
           {
             type: "code",
-            code: `{
-  entities: {
-    users: {
-      1: { id: 1, username: "zen", email: "zen@zenterest.net" }
-    },
-    pins: {
-      8: { id: 8, title: "the goldfinch", description: "carel fabritius, oil", authorId: 1 }
-    },
-    boards: {
-      3: { id: 3, title: "dutch oil paintings", description: "dutch golden age", authorId: 1 }
-    },
-    boardPins: {
-      1: { id: 1, pinId: 7, boardId: 3 }
-    },
-    ui: { loading: true/false, modal: true/false },
-    errors: { login: ["Incorrect combination"], pinForm: ["No Image Attached"], boardForm: ["Title cannot be blank"] },
-    session: { currentUser: 25 }
-  }
-}`,
-            keyColor: "cyan",
-            valueColor: "magenta",
+            title: "SAMPLE STATE:",
+            code: {
+              entities: {
+                users: {
+                  1: { id: 1, username: "zen", email: "zen@zenterest.net" }
+                },
+                pins: {
+                  8: { id: 8, title: "the goldfinch", description: "carel fabritius, oil", authorId: 1 }
+                },
+                boards: {
+                  3: { id: 3, title: "dutch oil paintings", description: "dutch golden age", authorId: 1 }
+                },
+                boardPins: {
+                  1: { id: 1, pinId: 7, boardId: 3 }
+                },
+                ui: { loading: true, modal: false },
+                errors: {
+                  login: ["Incorrect combination"],
+                  pinForm: ["No Image Attached"],
+                  boardForm: ["Title cannot be blank"]
+                },
+                session: { currentUser: 25 }
+              }
+            },
+            keyColor: "ruby",
+            valueColor: "navy",
+            punctuationColor: "black"
           },
         ],
       },
