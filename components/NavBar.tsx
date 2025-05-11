@@ -3,7 +3,9 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -14,7 +16,7 @@ export const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-sm bg-black/5 py-8 px-4 justify-start h-full z-50 items-end overflow-y-auto text-white space-y-6">
+      <nav className="hidden md:flex flex-col sticky top-0 backdrop-blur-none bg-black/5 py-8 pl-4 pr-8 justify-start h-full z-50 items-end overflow-y-auto text-white space-y-6">
         {/* Header */}
         <div className="text-right">
           <Link
@@ -23,25 +25,13 @@ export const Navbar = () => {
           >
             COLE WENDLING
           </Link>
-          <p className="text-base lg:text-md tracking-tight opacity-70 break-words">
+          <p className="text-base lg:text-sm tracking-tight opacity-70 break-words">
             FULLSTACK SOFTWARE ENGINEER
           </p>
 
           {/* Skills */}
-          <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter text-right">
-            {[
-              "Next.js",
-              "Vercel",
-              "React",
-              "Tailwind",
-              "JavaScript",
-              "Git",
-              "PostgreSQL",
-              "Ruby",
-              "TypeScript",
-              "HTML",
-              "CSS",
-            ].join(" | ")}
+          <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter max-w-[220px] break-words text-left">
+            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL | Ruby | TypeScript | HTML | CSS
           </p>
         </div>
 
@@ -52,18 +42,14 @@ export const Navbar = () => {
             target="_blank"
             className="mb-4"
           >
-            <div className="bg-white rounded-full p-1">
-              <Github className="text-black" size={16} />
-            </div>
+            <FontAwesomeIcon icon={faGithub} className="text-white w-5 h-5" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/colewendling/"
             target="_blank"
             className="mb-4"
           >
-            <div className="bg-white rounded-full p-1">
-              <Linkedin className="text-black" size={16} />
-            </div>
+            <FontAwesomeIcon icon={faLinkedin} className="text-white w-5 h-5" />
           </Link>
           <Link
             href="/resume"
@@ -74,7 +60,7 @@ export const Navbar = () => {
         </div>
 
         {/* Project Page Links */}
-        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[250px] max-[1130px]:pt-[200px]">
+        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[100px]">
           <Link href="/zenterest" className={`hover:text-gray-400 no-underline${pathname === "/zenterest" ? " text-gray-400" : ""}`}>
             ZENTEREST
           </Link>
@@ -145,21 +131,17 @@ export const Navbar = () => {
               <Link
                 href="https://github.com/colewendling"
                 target="_blank"
-                className="flex items-center space-x-2 no-underline hover:text-gray-400"
+                className="flex items-center space-x-2 text-2xl no-underline hover:text-gray-400"
               >
-                <div className="bg-white rounded-full p-1">
-                  <Github className="text-black" size={18} />
-                </div>
+                <FontAwesomeIcon icon={faGithub} className="text-white w-5 h-5" />
                 <span>GITHUB</span>
               </Link>
               <Link
                 href="https://www.linkedin.com/in/colewendling/"
                 target="_blank"
-                className="flex items-center space-x-2 no-underline hover:text-gray-400"
+                className="flex items-center space-x-2 text-2xl no-underline hover:text-gray-400"
               >
-                <div className="bg-white rounded-lg p-1">
-                  <Linkedin className="text-black" size={18} />
-                </div>
+                <FontAwesomeIcon icon={faLinkedin} className="text-white w-6 h-6" />
                 <span>LINKEDIN</span>
               </Link>
             </div>
