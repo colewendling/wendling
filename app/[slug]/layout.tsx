@@ -3,14 +3,15 @@
 import { GradientBackground } from "@/components/GradientBackground";
 import { projects } from "@/data/projects";
 
-export default function ProjectLayout({
+export default async function ProjectLayout({
   params,
   children,
 }: {
   params: { slug: string };
   children: React.ReactNode;
 }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   return (
     <GradientBackground
