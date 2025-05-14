@@ -18,7 +18,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   return (
     <div className="container mx-auto py-10 px-4 text-white">
-      <div className="px-24">
+      <div className="px-4 md:px-24">
         <ProjectCard {...{ title, header, stats, links, linkColor, statColor }} />
         <ProjectContent contentBlocks={contentBlocks} />
       </div>
