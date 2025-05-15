@@ -6,15 +6,15 @@ import TechIconGrid from "./TechIconGrid";
 
 const ProfileCard: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center text-white space-y-10 lg:space-y-0 lg:space-x-4">
+    <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center text-white space-y-10 lg:space-y-0 lg:space-x-4">
 
       {/* Profile Image */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-4 lg:px-8 text-center lg:max-w-[500px]">
+      <div className="w-full lg:w-1/2 px-4 lg:px-8 text-center lg:max-w-[500px]">
         <div className="w-full flex justify-center">
           <img
             src="/images/general/profile.png"
             alt="Profile"
-            className="object-cover shadow-card rounded-2xl max-h-[500px]"
+            className="object-cover shadow-card rounded-2xl max-h-[350px]"
           />
         </div>
       </div>
@@ -27,7 +27,7 @@ const ProfileCard: React.FC = () => {
           PostgreSQL and Ruby on Rails.
         </p>
 
-        <div className="my-6">
+        <div className="my-6 [&_img]:p-2">
           <TechIconGrid
             icons={[
               {
