@@ -11,6 +11,7 @@ export interface Project {
   stats: { [name: string]: string };
   linkColor: string;
   statColor: string;
+  textTheme: 'light' | 'dark';
   contentBlocks: ContentBlock[];
 }
 
@@ -50,6 +51,7 @@ export const projects: Project[] = [
     },
     linkColor: "ruby",
     statColor: "ruby",
+    textTheme: 'dark',
     contentBlocks: [
       // Full-width introduction text
       {
@@ -153,47 +155,58 @@ export const projects: Project[] = [
       },
     ],
   },
-  // {
-  //   slug: "babelbuilder",
-  //   title: "Babel Builder",
-  //   thumbnail: "/images/projects/babelbuilder/tn-babelbuilder.png",
-  //   images: [
-  //     "/images/projects/babelbuilder/babelbuilder-01.gif",
-  //     "/images/projects/babelbuilder/babelbuilder-02.png",
-  //   ],
-  //   gradientColors: ["rgba(73, 73, 73, 0.74)", "rgba(27, 150, 127, 0.94)", "rgba(49, 109, 164, 0.98)"],
-  //   liveUrl: "https://www.babelbuilder.com/",
-  //   githubUrl: "https://github.com/colewendling/BabelBuilder",
-  //   description:
-  //     "Babel Builder is a tower building game where a user must time their placement of flying tower segments to ensure that their tower grows as tall as possible. If the player’s segment timing is off an overhang occurs and that part of the segment crumbles making it progressively harder as the game progresses!",
-  //   contentBlocks: [
-  //     {
-  //       type: "text",
-  //       content:
-  //         "Type: Tower building simulation game\n\nSoftware: JavaScript, Cannon.js, Canvas",
-  //     },
-  //     {
-  //       type: "text",
-  //       content:
-  //         "Integrate Cannon.js to implement physics for falling blocks and fog game mechanic to simulate atmosphere as tower grows.",
-  //     },
-  //     {
-  //       type: "text",
-  //       content:
-  //         "Implement code to gradually change hue value of tower segments as the game progresses.",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/babelbuilder/babelbuilder-01.gif",
-  //       alt: "Gameplay demo of Babel Builder",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/babelbuilder/babelbuilder-02.png",
-  //       alt: "Tower building screen in Babel Builder",
-  //     },
-  //   ],
-  // },
+  {
+    slug: "babelbuilder",
+    title: "Babel Builder",
+    thumbnail: "/images/projects/babelbuilder/tn-babelbuilder.png",
+    header: "/images/projects/babelbuilder/babelbuilder-01.gif",
+    gradientColors: ["rgba(73, 73, 73, 0.74)", "rgba(27, 150, 127, 0.94)", "rgba(49, 109, 164, 0.98)"],
+    images: [
+      "/images/projects/babelbuilder/babelbuilder-01.gif",
+      "/images/projects/babelbuilder/babelbuilder-02.png",
+    ],
+    links: {
+      "live site": "https://www.babelbuilder.com/",
+      github: "https://github.com/colewendling/BabelBuilder",
+    },
+    stats: {
+      Type: "Tower building simulation game",
+      Software: "JavaScript, Cannon.js, Canvas",
+    },
+    linkColor: "cyan",
+    statColor: "cyan",
+    textTheme: 'light',
+    contentBlocks: [
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "text",
+            content:
+              "Babel Builder is a tower building game where a user must time their placement of flying tower segments to ensure that their tower grows as tall as possible. If the player’s segment timing is off, an overhang occurs and that part of the segment crumbles making it progressively harder as the game progresses!",
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• Integrate Cannon.js to implement physics for falling blocks and fog game mechanic to simulate atmosphere as tower grows.",
+          },
+          {
+            type: "text",
+            content:
+              "• Implement code to gradually change hue value of tower segments as the game progresses.",
+          },
+        ],
+      },
+      {
+        type: "image-full",
+        title: "BABEL BUILDER DESIGN DIAGRAM",
+        src: "/images/projects/babelbuilder/babelbuilder-02.png",
+        alt: "BABEL BUILDER DESIGN DIAGRAM",
+      },
+    ],
+  },
   // {
   //   slug: "onda",
   //   title: "Onda",
