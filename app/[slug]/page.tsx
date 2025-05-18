@@ -4,8 +4,11 @@ import { projects } from "@/data/projects";
 import { ProjectContent } from "@/components/ProjectContent";
 import { ProjectCard } from "@/components/ProjectCard";
 
-
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
@@ -14,13 +17,24 @@ export default async function ProjectPage({ params }: { params: { slug: string }
       <div className="text-center py-20 text-white">Project not found</div>
     );
 
-  const { title, header, stats, links, linkColor, statColor, contentBlocks } = project;
+  const {
+    title,
+    header,
+    stats,
+    links,
+    linkColor,
+    statColor,
+    textTheme,
+    contentBlocks,
+  } = project;
 
   return (
     <div className="container mx-auto py-10 px-4 text-white">
       <div className="px-4 md:px-24">
-        <ProjectCard {...{ title, header, stats, links, linkColor, statColor }} />
-        <ProjectContent contentBlocks={contentBlocks} />
+        <ProjectCard
+          {...{ title, header, stats, links, linkColor, statColor }}
+        />
+        <ProjectContent contentBlocks={contentBlocks} textTheme={textTheme} />
       </div>
     </div>
   );

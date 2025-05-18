@@ -59,7 +59,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {Object.entries(stats).map(([key, value]) => (
               <p key={key}>
                 <span className="font-semibold">{key}:</span>{' '}
-                {(key === "Frontend Software" || key === "Backend Software") ? (
+                {(key === "Frontend Software" || key === "Backend Software" || key === "Software") ? (
                   <span style={{ color: themeColorMap[statColor] }}>
                     {value}
                   </span>

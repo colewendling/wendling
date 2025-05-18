@@ -45,23 +45,35 @@ const FadeIn: React.FC<{ children: ReactNode; className?: string }> = ({
 
 interface ProjectContentProps {
   contentBlocks: ContentBlock[];
+  textTheme: "light" | "dark";
 }
 
 export const ProjectContent: React.FC<ProjectContentProps> = ({
   contentBlocks,
+  textTheme,
 }) => {
   const renderBlock = (block: ContentBlock, key: string): ReactNode => {
     switch (block.type) {
       case "text":
         return (
-          <p key={key} className="text-sm body-text">
+          <p
+            key={key}
+            className={`text-sm body-text ${
+              textTheme === 'dark' ? 'text-[rgba(189,189,189,0.82)]' : ''
+            }`}
+          >
             {block.content}
           </p>
         );
 
       case "text-full":
         return (
-          <p key={key} className="body-text-full text-sm md:text-base">
+          <p
+            key={key}
+            className={`body-text-full text-sm md:text-base ${
+              textTheme === 'dark' ? 'text-[rgba(189,189,189,0.82)]' : ''
+            }`}
+          >
             {block.content}
           </p>
         );
