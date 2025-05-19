@@ -22,7 +22,9 @@ export type ContentBlock =
   | { type: "text-full"; content: string }
   | { type: "image-full"; title: string; src: string; alt?: string }
   | { type: "code"; title: string; code: Record<string, any>; keyColor: string; valueColor: string; punctuationColor: string }
-  | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[] };
+  | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[] }
+  | { type: "vectary-3d"; title: string; models: { id: string; src: string }[] }
+  | { type: "three-col"; title: string; images: { src: string; alt?: string }[] };
 
 export const projects: Project[] = [
   {
@@ -207,52 +209,84 @@ export const projects: Project[] = [
       },
     ],
   },
-  // {
-  //   slug: "onda",
-  //   title: "Onda",
-  //   thumbnail: "/images/projects/onda/tn-onda.png",
-  //   images: [
-  //     "/images/projects/onda/onda-01.jpg",
-  //     "/images/projects/onda/onda-02.png",
-  //     "/images/projects/onda/onda-03.jpg",
-  //     "/images/projects/onda/onda-04.jpg",
-  //   ],
-  //   gradientColors: ["rgba(73, 73, 73, 1)", "rgba(150, 82, 27, 1)", "rgba(62, 59, 52, 0.98)"],
-  //   liveUrl: "https://magazine.texasarchitects.org/2019/02/28/mixed-media/",
-  //   githubUrl: "",
-  //   description:
-  //     "ONDA - Spanish for electromagnetic wave, is a digitally fabricated installation meant to showcase the power of code to create procedurally generated parametric architecture. Featured on the cover of Texas Architect Monthly and installed permanently at the University of Texas campus in Austin.",
-  //   contentBlocks: [
-  //     {
-  //       type: "text",
-  //       content:
-  //         "Type: Digitally-Fabricated Wall\nSize: 20’ l x 8’ h x 6”\nLocation: University of Texas Campus - Austin, Texas\n\nSoftware: JavaScript, Grasshopper, G-Code",
-  //     },
-  //     {
-  //       type: "text",
-  //       content:
-  //         "Recode the assembly into manageable block segments with 180+ script-generated CNC sheet layouts to minimize material waste.",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/onda/onda-01.jpg",
-  //       alt: "Onda installation overview",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/onda/onda-02.png",
-  //       alt: "Detail shot of Onda segments",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/onda/onda-03.jpg",
-  //       alt: "Parametric assembly blocks for Onda",
-  //     },
-  //     {
-  //       type: "image",
-  //       src: "/images/projects/onda/onda-04.jpg",
-  //       alt: "Onda installation at UT Austin",
-  //     },
-  //   ],
-  // },
+  {
+    slug: "onda",
+    title: "Onda",
+    thumbnail: "/images/projects/onda/tn-onda.png",
+    header: "/images/projects/onda/onda-01.jpg",
+    gradientColors: ["rgba(73,73,73,1)", "rgba(150,82,27,1)", "rgba(62,59,52,0.98)"],
+    images: [
+      "/images/projects/onda/onda-01.jpg",
+      "/images/projects/onda/onda-02.jpg",
+      "/images/projects/onda/onda-03.png",
+      "/images/projects/onda/onda-04.jpg",
+      "/images/projects/onda/onda-05.jpg",
+    ],
+    links: {
+      "live site": "https://magazine.texasarchitects.org/2019/02/28/mixed-media/",
+      github: "",
+    },
+    stats: {
+      Type: "Digitally-Fabricated Wall",
+      Size: "20’ l x 8’ h x 6”",
+      Location: "University of Texas Campus - Austin, Texas",
+      Software: "JavaScript, Grasshopper, G-Code",
+    },
+    linkColor: "ruby",
+    statColor: "cyan",
+    textTheme: "light",
+    contentBlocks: [
+      {
+        type: "text-full",
+        content:
+          "ONDA - Spanish for electromagnetic wave, is a digitally fabricated installation meant to showcase the power of code to create procedurally generated parametric architecture.",
+      },
+      {
+        type: "vectary-3d",
+        title: "ONDA 3D GEOMETRY IN AR",
+        models: [
+          {
+            id: "2da2ff29-1ea0-44c0-a49c-ff2beefda690",
+            src: "https://www.vectary.com/viewer/v1/?model=2da2ff29-1ea0-44c0-a49c-ff2beefda690&env=studio3",
+          },
+          {
+            id: "27bb8995-748c-46dd-b486-c93c3e362e42",
+            src: "https://www.vectary.com/viewer/v1/?model=27bb8995-748c-46dd-b486-c93c3e362e42&env=studio3",
+          },
+        ],
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "text",
+            content:
+              "• Featured on the cover of Texas Architect Monthly and installed permanently at the University of Texas campus in Austin.",
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• Recode the assembly into manageable block segments with 180+ script-generated CNC sheet layouts to minimize material waste.",
+          },
+        ],
+      },
+      {
+        type: "image-full",
+        title: "ONDA CONSTRUCTION DRAWINGS - AXONOMETRIC | PLAN | SECTION DETAIL",
+        src: "/images/projects/onda/onda-02.jpg",
+        alt: "ONDA CONSTRUCTION DRAWINGS - AXONOMETRIC | PLAN | SECTION DETAIL",
+      },
+      {
+        type: "three-col",
+        title: "BUILT WORK",
+        images: [
+          { src: "/images/projects/onda/onda-03.png" },
+          { src: "/images/projects/onda/onda-04.jpg" },
+          { src: "/images/projects/onda/onda-05.jpg" },
+        ],
+      },
+    ],
+  },
 ];
