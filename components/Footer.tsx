@@ -1,7 +1,10 @@
+'use client';
 // components/Footer.tsx
 
 import React from "react";
-import { Mail, Github, Linkedin, FileText, Globe } from "lucide-react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe, faFileLines, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
   return (
@@ -12,10 +15,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2 items-center md:items-start">
           <h3 className="text-lg font-bold mb-3">Developer</h3>
           <span>cole wendling</span>
-          <a href="mailto:cole@wendling.io" className="flex items-center gap-2 text-sm hover:underline">
-            <Mail className="size-5" />
-            cole@wendling.io
-          </a>
+          <a href="mailto:cole@wendling.io" className="text-sm hover:underline">cole@wendling.io</a>
           <a href="tel:+19403935061" className="flex items-center gap-2 text-sm hover:underline">
             +1-940-393-5061
           </a>
@@ -24,24 +24,30 @@ const Footer = () => {
         {/* Links */}
         <div className="flex flex-col gap-2 items-center md:items-start">
           <h3 className="text-lg font-bold mb-3">Links</h3>
-          <div className="flex flex-row gap-3 lg:gap-6">
-            <a
-              href="https://github.com/colewendling"
-              className="flex items-center justify-center bg-white p-1 rounded-full hover:bg-slate-300 shadow-md shadow-black/50 size-8"
-            >
-              <Github className="size-5 text-slate-600" />
+          <div className="flex flex-row gap-8">
+            <a href="https://github.com/colewendling" className="group relative hover:text-slate-300">
+              <FontAwesomeIcon icon={faGithub} className="text-white text-2xl" />
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
+                GitHub
+              </span>
             </a>
-            <a
-              href="https://www.linkedin.com/in/colewendling/"
-              className="flex items-center justify-center bg-white p-1 rounded-full hover:bg-slate-300 shadow-md shadow-black/50 size-8"
-            >
-              <Linkedin className="size-5 text-slate-600" />
+            <a href="https://www.linkedin.com/in/colewendling/" className="group relative hover:text-slate-300">
+              <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl" />
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
+                LinkedIn
+              </span>
             </a>
-            <a href="https://wendling.io/" className="flex items-center justify-center bg-white p-1 rounded-full hover:bg-slate-300 shadow-md shadow-black/50 size-8">
-              <Globe className="size-5 text-slate-600" />
+            <a href="https://wendling.io/" className="group relative hover:text-slate-300">
+              <FontAwesomeIcon icon={faGlobe} className="text-white text-2xl" />
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
+                Website
+              </span>
             </a>
-            <a href="https://wendling.io/Resume" className="flex items-center justify-center bg-white p-1 rounded-full hover:bg-slate-300 shadow-md shadow-black/50 size-8">
-              <FileText className="size-5 text-slate-600" />
+            <a href="https://wendling.io/Resume" className="group relative hover:text-slate-300">
+              <FontAwesomeIcon icon={faFileLines} className="text-white text-2xl" />
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
+                Resume
+              </span>
             </a>
           </div>
         </div>
@@ -50,7 +56,7 @@ const Footer = () => {
         <div className="flex flex-col gap-2 items-center md:items-start">
           <h3 className="text-lg font-bold mb-3">Connect</h3>
           <a href="mailto:cole@wendling.io" className="flex items-center gap-2 text-sm hover:underline">
-            <Mail className="size-5" />
+            <FontAwesomeIcon icon={faEnvelope} className="size-5 text-white" />
             Contact Me
           </a>
         </div>

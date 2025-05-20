@@ -2,10 +2,6 @@
 
 "use client";
 
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
-
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,8 +30,8 @@ export const Navbar = () => {
           </p>
 
           {/* Skills */}
-          <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter max-w-[220px] break-words text-left">
-            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL | Ruby | TypeScript | HTML | CSS
+          <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter max-w-[220px] break-words text-right">
+            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL | Ruby | TypeScript | HTML | CSS |
           </p>
         </div>
 
