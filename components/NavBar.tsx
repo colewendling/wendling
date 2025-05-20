@@ -2,6 +2,10 @@
 
 "use client";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
+
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -141,7 +145,7 @@ export const Navbar = () => {
                 target="_blank"
                 className="flex items-center space-x-2 text-2xl no-underline hover:text-gray-400"
               >
-                <FontAwesomeIcon icon={faLinkedin} className="text-white w-6 h-6" />
+                <FontAwesomeIcon icon={faLinkedin} className="text-white w-5 h-5" />
                 <span>LINKEDIN</span>
               </Link>
             </div>
