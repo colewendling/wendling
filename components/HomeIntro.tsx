@@ -1,10 +1,10 @@
-// components/ProfileCard.tsx
+// components/HomeIntro.tsx
 "use client";
 
 import React from "react"
 import TechIconGrid from "./TechIconGrid";
 
-const ProfileCard: React.FC = () => {
+const HomeIntro: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center text-white space-y-10 lg:space-y-0 lg:space-x-4">
 
@@ -75,4 +75,4 @@ const ProfileCard: React.FC = () => {
   );
 };
 
-export default ProfileCard;
+export default HomeIntro;

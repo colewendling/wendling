@@ -2,7 +2,7 @@
 
 import { projects } from "@/data/projects";
 import { ProjectContent } from "@/components/ProjectContent";
-import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectDetails } from "@/components/ProjectDetails";
 
 export default async function ProjectPage({
   params,
@@ -31,7 +31,7 @@ export default async function ProjectPage({
   return (
     <div className="container mx-auto py-10 px-4 text-white">
       <div className="px-4 md:px-24">
-        <ProjectCard
+        <ProjectDetails
           {...{ title, header, stats, links, linkColor, statColor }}
         />
         <ProjectContent contentBlocks={contentBlocks} textTheme={textTheme} />

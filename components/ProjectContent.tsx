@@ -6,11 +6,13 @@ import React, { ReactNode, useRef, useEffect, useState } from "react";
 import { ContentBlock } from "@/data/projects";
 import Image from "next/image";
 import Modal from "./Modal";
-import CodeBlock from '@/components/CodeBlock';
+import CodeBlock from "@/components/CodeBlock";
+import Grid from "./Grid";
+import ScrollFade from "./ScrollFade";
 
 const FadeIn: React.FC<{ children: ReactNode; className?: string }> = ({
   children,
-  className = ""
+  className = "",
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -34,8 +36,8 @@ const FadeIn: React.FC<{ children: ReactNode; className?: string }> = ({
   return (
     <div
       ref={ref}
-      className={`${className} scroll-transition-fade transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      className={`${className} scroll-transition-fade ${
+        isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       {children}
@@ -59,7 +61,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
           <p
             key={key}
             className={`text-sm body-text ${
-              textTheme === 'dark' ? 'text-[rgba(189,189,189,0.82)]' : ''
+              textTheme === "dark" ? "text-[rgba(189,189,189,0.82)]" : ""
             }`}
           >
             {block.content}
@@ -71,7 +73,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
           <p
             key={key}
             className={`body-text-full text-sm md:text-base ${
-              textTheme === 'dark' ? 'text-[rgba(189,189,189,0.82)]' : ''
+              textTheme === "dark" ? "text-[rgba(189,189,189,0.82)]" : ""
             }`}
           >
             {block.content}
@@ -80,50 +82,56 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
 
       case "image-full":
         return (
-          <FadeIn key={key} className="w-full">
+          <div key={key} className="w-full">
             <h2 className="image-title-text">{block.title}</h2>
-            <Modal
-              src={block.src}
-              alt={block.alt || block.title}
-              width={1200}
-              height={600}
-              className="w-full cursor-zoom-in shadow-none rounded-none"
-            >
-              <Image
+            <FadeIn className="w-full">
+              <Modal
                 src={block.src}
                 alt={block.alt || block.title}
                 width={1200}
                 height={600}
-                className="w-full h-auto object-cover shadow-card rounded-2xl"
-              />
-            </Modal>
-          </FadeIn>
+                className="w-full cursor-zoom-in shadow-none rounded-none"
+              >
+                <ScrollFade>
+                  <Image
+                    src={block.src}
+                    alt={block.alt || block.title}
+                    width={1200}
+                    height={600}
+                    className="w-full h-auto object-cover shadow-card rounded-2xl"
+                  />
+                </ScrollFade>
+              </Modal>
+            </FadeIn>
+          </div>
         );
 
       case "image":
         return (
-          <FadeIn key={key}>
+          <div key={key}>
             {block.alt && (
-              <h2 className="image-title-text mt-8">
-                {block.alt}
-              </h2>
+              <h2 className="image-title-text mt-8">{block.alt}</h2>
             )}
-            <Modal
-              src={block.src}
-              alt={block.alt || ''}
-              width={600}
-              height={400}
-              className="w-full cursor-zoom-in shadow-none rounded-none"
-            >
-              <Image
+            <FadeIn>
+              <Modal
                 src={block.src}
-                alt={block.alt || ''}
+                alt={block.alt || ""}
                 width={600}
                 height={400}
-                className="w-full h-auto object-contain shadow-card rounded-2xl"
-              />
-            </Modal>
-          </FadeIn>
+                className="w-full cursor-zoom-in shadow-none rounded-none"
+              >
+                <ScrollFade>
+                  <Image
+                    src={block.src}
+                    alt={block.alt || ""}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-contain shadow-card rounded-2xl"
+                  />
+                </ScrollFade>
+              </Modal>
+            </FadeIn>
+          </div>
         );
 
       case "code":
@@ -140,7 +148,10 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
 
       case "two-col":
         return (
-          <div key={key} className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch mb-8">
+          <div
+            key={key}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch mb-8"
+          >
             <div className="flex flex-col justify-between h-full">
               {block.left.map((b, i) => renderBlock(b, `${key}-left-${i}`))}
             </div>
@@ -150,6 +161,37 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
               </div>
             )}
           </div>
+        );
+
+      case "vectary-3d":
+        return (
+          <FadeIn key={key} className="w-full mb-8">
+            <h2 className="image-title-text mt-8">{block.title}</h2>
+            <div className="flex flex-col lg:flex-row gap-6">
+              <div className="w-full lg:w-2/ border-light">
+                <iframe
+                  src={block.models[0].src}
+                  className="w-full h-[480px]"
+                  allow="autoplay; fullscreen"
+                />
+              </div>
+              <div className="hidden lg:block w-full lg:w-1/3 border-light">
+                <iframe
+                  src={block.models[1].src}
+                  className="w-full h-[480px]"
+                  allow="autoplay; fullscreen"
+                />
+              </div>
+            </div>
+          </FadeIn>
+        );
+
+      case "three-col":
+        return (
+          <FadeIn key={key} className="w-full mb-8">
+            <h2 className="image-title-text mt-8">{block.title}</h2>
+            <Grid images={block.images} />
+          </FadeIn>
         );
 
       default:

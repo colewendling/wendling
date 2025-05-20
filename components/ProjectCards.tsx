@@ -2,10 +2,11 @@
 
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/data/projects";
+import ScrollFade from "./ScrollFade";
 
 interface ProjectCardProps {
   slug: string;
@@ -18,36 +19,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   thumbnail,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const isGif = thumbnail.toLowerCase().endsWith('.gif');
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <Link href={`/${slug}`}>
-      <div
-        ref={ref}
-        className={`relative w-full aspect-video overflow-hidden rounded-lg cursor-pointer scroll-transition-fade transform ${
-          isVisible
-            ? "opacity-100 translate-y-0 transition-all duration-700 ease-out"
-            : "opacity-0 translate-y-8"
-        }`}
-      >
+      <ScrollFade className="relative w-full aspect-video overflow-hidden rounded-lg cursor-pointer">
         <Image
           src={thumbnail}
           alt={title}
@@ -58,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-lg font-semibold">
           {title}
         </div>
-      </div>
+      </ScrollFade>
     </Link>
   );
 };

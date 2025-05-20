@@ -1,4 +1,4 @@
-// components/ProjectCard.tsx
+// components/ProjectDetails.tsx
 
 "use client";
 
@@ -7,7 +7,7 @@ import Link from "next/link";
 import { CornerUpRight } from "lucide-react";
 import Modal from "./Modal";
 
-export interface ProjectCardProps {
+export interface ProjectDetailsProps {
   title: string;
   header: string;
   stats: { [name: string]: string };
@@ -16,7 +16,7 @@ export interface ProjectCardProps {
   statColor: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
   title,
   header,
   stats,

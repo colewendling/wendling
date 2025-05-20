@@ -43,7 +43,6 @@
 :root {
   --mouse-x: 0;
   --mouse-y: 0;
-
   --color-bg1: rgb(11, 36, 70);
   --color-bg2: rgb(200, 147, 43);
   --color1: 18, 113, 255;
@@ -236,5 +235,10 @@
   }
   .dev-3 {
     border: 1px solid lime;
+  }
+  .border-light {
+    border: 1px solid;
+    border-radius: 25px;
+    border-color: rgba(255, 255, 255, 0.579);
   }
 }
