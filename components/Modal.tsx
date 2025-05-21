@@ -34,7 +34,7 @@ export default function Modal({
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-75 p-4"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-90 p-4"
           onClick={() => setIsOpen(false)}
         >
           <div
