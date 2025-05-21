@@ -11,7 +11,7 @@ export interface Project {
   stats: { [name: string]: string };
   linkColor: string;
   statColor: string;
-  textTheme: 'light' | 'dark';
+  textTheme: "light" | "dark";
   contentBlocks: ContentBlock[];
 }
 
@@ -21,10 +21,21 @@ export type ContentBlock =
   | { type: "video"; src: string; title?: string }
   | { type: "text-full"; content: string }
   | { type: "image-full"; title: string; src: string; alt?: string }
-  | { type: "code"; title: string; code: Record<string, any>; keyColor: string; valueColor: string; punctuationColor: string }
+  | {
+      type: "code";
+      title: string;
+      code: Record<string, any>;
+      keyColor: string;
+      valueColor: string;
+      punctuationColor: string;
+    }
   | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[] }
   | { type: "vectary-3d"; title: string; models: { id: string; src: string }[] }
-  | { type: "three-col"; title: string; images: { src: string; alt?: string }[] };
+  | {
+      type: "three-col";
+      title: string;
+      images: { src: string; alt?: string }[];
+    };
 
 export const projects: Project[] = [
   {
@@ -53,7 +64,7 @@ export const projects: Project[] = [
     },
     linkColor: "ruby",
     statColor: "ruby",
-    textTheme: 'dark',
+    textTheme: "dark",
     contentBlocks: [
       // Full-width introduction text
       {
@@ -97,29 +108,39 @@ export const projects: Project[] = [
             code: {
               entities: {
                 users: {
-                  1: { id: 1, username: "zen", email: "zen@zenterest.net" }
+                  1: { id: 1, username: "zen", email: "zen@zenterest.net" },
                 },
                 pins: {
-                  8: { id: 8, title: "the goldfinch", description: "carel fabritius, oil", authorId: 1 }
+                  8: {
+                    id: 8,
+                    title: "the goldfinch",
+                    description: "carel fabritius, oil",
+                    authorId: 1,
+                  },
                 },
                 boards: {
-                  3: { id: 3, title: "dutch oil paintings", description: "dutch golden age", authorId: 1 }
+                  3: {
+                    id: 3,
+                    title: "dutch oil paintings",
+                    description: "dutch golden age",
+                    authorId: 1,
+                  },
                 },
                 boardPins: {
-                  1: { id: 1, pinId: 7, boardId: 3 }
+                  1: { id: 1, pinId: 7, boardId: 3 },
                 },
                 ui: { loading: true, modal: false },
                 errors: {
                   login: ["Incorrect combination"],
                   pinForm: ["No Image Attached"],
-                  boardForm: ["Title cannot be blank"]
+                  boardForm: ["Title cannot be blank"],
                 },
-                session: { currentUser: 25 }
-              }
+                session: { currentUser: 25 },
+              },
             },
             keyColor: "ruby",
             valueColor: "navy",
-            punctuationColor: "black"
+            punctuationColor: "black",
           },
         ],
       },
@@ -162,7 +183,11 @@ export const projects: Project[] = [
     title: "Babel Builder",
     thumbnail: "/images/projects/babelbuilder/tn-babelbuilder.png",
     header: "/images/projects/babelbuilder/babelbuilder-01.gif",
-    gradientColors: ["rgba(73, 73, 73, 0.74)", "rgba(27, 150, 127, 0.94)", "rgba(49, 109, 164, 0.98)"],
+    gradientColors: [
+      "rgba(73, 73, 73, 0.74)",
+      "rgba(27, 150, 127, 0.94)",
+      "rgba(49, 109, 164, 0.98)",
+    ],
     images: [
       "/images/projects/babelbuilder/babelbuilder-01.gif",
       "/images/projects/babelbuilder/babelbuilder-02.png",
@@ -177,7 +202,7 @@ export const projects: Project[] = [
     },
     linkColor: "cyan",
     statColor: "cyan",
-    textTheme: 'light',
+    textTheme: "light",
     contentBlocks: [
       {
         type: "two-col",
@@ -214,7 +239,11 @@ export const projects: Project[] = [
     title: "Onda",
     thumbnail: "/images/projects/onda/tn-onda.png",
     header: "/images/projects/onda/onda-01.jpg",
-    gradientColors: ["rgba(73,73,73,1)", "rgba(150,82,27,1)", "rgba(62,59,52,0.98)"],
+    gradientColors: [
+      "rgba(73,73,73,1)",
+      "rgba(150,82,27,1)",
+      "rgba(62,59,52,0.98)",
+    ],
     images: [
       "/images/projects/onda/onda-01.jpg",
       "/images/projects/onda/onda-02.jpg",
@@ -223,8 +252,7 @@ export const projects: Project[] = [
       "/images/projects/onda/onda-05.jpg",
     ],
     links: {
-      "live site": "https://magazine.texasarchitects.org/2019/02/28/mixed-media/",
-      github: "",
+      press: "https://magazine.texasarchitects.org/2019/02/28/mixed-media/",
     },
     stats: {
       Type: "Digitally-Fabricated Wall",
@@ -274,7 +302,8 @@ export const projects: Project[] = [
       },
       {
         type: "image-full",
-        title: "ONDA CONSTRUCTION DRAWINGS - AXONOMETRIC | PLAN | SECTION DETAIL",
+        title:
+          "ONDA CONSTRUCTION DRAWINGS - AXONOMETRIC | PLAN | SECTION DETAIL",
         src: "/images/projects/onda/onda-02.jpg",
         alt: "ONDA CONSTRUCTION DRAWINGS - AXONOMETRIC | PLAN | SECTION DETAIL",
       },
@@ -286,6 +315,122 @@ export const projects: Project[] = [
           { src: "/images/projects/onda/onda-04.jpg" },
           { src: "/images/projects/onda/onda-05.jpg" },
         ],
+      },
+    ],
+  },
+  {
+    slug: "dickinson",
+    title: "The Dickinson Sublime",
+    thumbnail: "/images/projects/dickinson/dickinson-tn.gif",
+    header: "/images/projects/dickinson/dickinson-tn.gif",
+    gradientColors: ["#5e373d", "#1c4966", "rgba(103, 42, 42, 0.91)"],
+    images: [
+      "/images/projects/dickinson/dickinson-01.mp4",
+      "/images/projects/dickinson/dickinson-02.mp4",
+      "/images/projects/dickinson/dickinson-03.mp4",
+      "/images/projects/dickinson/dickinson-04.mp4",
+    ],
+    links: {
+      "LIVE SITE": "https://emilypoems.com/",
+      GITHUB: "https://github.com/colewendling/emily-dickinson-sublime",
+      WIKI: "https://github.com/colewendling/emily-dickinson-sublime?tab=readme-ov-file#emily-dickinson-sublime",
+    },
+    linkColor: "ruby",
+    statColor: "cyan",
+    textTheme: "dark",
+    stats: {
+      Type: "Interactive 3D Data Visualization",
+      "Frontend Software": "Next.js, Three.js, TypeScript, Tailwind CSS",
+    },
+    contentBlocks: [
+      {
+        type: "text-full",
+        content:
+          "The Dickinson Sublime is an interactive 3D visualization mapping Emily Dickinson's 1,775 poems. It uses machine-learned embeddings to cluster related poems in space, with nodes colored by theme and links connecting works that share motifs.",
+      },
+      {
+        type: "video",
+        src: "/images/projects/dickinson/dickinson-01.mp4",
+        title: "Explorable 3D Map of Dickinson's Poems",
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "text",
+            content:
+              "• This project generates 384‑dimensional sentence embeddings for each poem via Hugging Face’s all-MiniLM-L6-v2 API, averages them into three dimensions, and positions poems as nodes in 3D space for thematic clustering.",
+          },
+          {
+            type: "text",
+            content:
+              "• Three.js renders each node in a dynamic WebGL scene, styled via Tailwind CSS for responsive layout. Users can rotate, zoom, and pan the map on desktop or mobile for seamless exploration of Dickinson’s poem network.",
+          },
+          {
+            type: "text",
+            content:
+              "• Edges link poems to their two nearest neighbors and those sharing major motifs, while node sizes scale by connection count to highlight central works. Clicking a node opens a modal with the full poem for deeper insight.",
+          },
+        ],
+        right: [
+          {
+            type: "code",
+            title: "SAMPLE POEM STRUCTURE:",
+            code: {
+              id: 4,
+              date: 1853,
+              stanzas: [
+                ["On this wondrous sea", "Sailing silently,", "Ho! Pilot, ho!"],
+                [
+                  "Knowest thou the shore",
+                  "Where no breakers roar -",
+                  "Where the storm is o'er?",
+                ],
+                [
+                  "In the peaceful west",
+                  "Many the sails at rest -",
+                  "The anchors fast -",
+                  "Thither I pilot thee -",
+                  "Land Ho! Eternity!",
+                  "Ashore at last!",
+                ],
+              ],
+              emphases: [
+                { word: "thee", stanzaIndex: 2, lineIndex: 3, position: 3 },
+              ],
+            },
+            keyColor: "ruby",
+            valueColor: "navy",
+            punctuationColor: "black",
+          },
+        ],
+      },
+      {
+        type: "video",
+        src: "/images/projects/dickinson/dickinson-03.mp4",
+        title: "How It Works: Embedding and Visualization Overview",
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "video",
+            src: "/images/projects/dickinson/dickinson-04.mp4",
+            title: "Animated Emphasis Highlighting in Poems",
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• As each poem node renders, highlighted words animate in sequence—echoing Emily Dickinson’s original emphasis—to bring emotional cadence and visual life to the text.",
+          },
+        ],
+      },
+      {
+        type: "video",
+        src: "/images/projects/dickinson/dickinson-02.mp4",
+        title: "Poem Menu & Animated Modal: Themes and Motifs",
       },
     ],
   },
