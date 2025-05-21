@@ -1,4 +1,5 @@
 // components/Modal.tsx
+
 "use client";
 
 import React, { useState } from "react";
@@ -24,6 +25,7 @@ export default function Modal({
 }: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const isGif = src.toLowerCase().endsWith(".gif");
+  const isVideo = src.toLowerCase().endsWith(".mp4");
 
   return (
     <>
@@ -41,14 +43,27 @@ export default function Modal({
             className="relative rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-              unoptimized={isGif}
-              className="max-w-full max-h-[90vh] object-contain"
-            />
+            {isVideo ? (
+              <video
+                src={src}
+                width={width}
+                height={height}
+                className="max-w-full max-h-[90vh] object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <Image
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                unoptimized={isGif}
+                className="max-w-full max-h-[90vh] object-contain"
+              />
+            )}
             <X
               size={24}
               className="fixed top-3 right-3 text-white cursor-pointer"

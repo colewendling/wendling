@@ -12,7 +12,7 @@ import ScrollFade from "./ScrollFade";
 export default function Resume() {
   return (
     <div className="">
-      <div className="flex flex-col items-center px-10 md:px-20 py-20 dev-2">
+      <div className="flex flex-col items-center px-10 md:px-20 py-20">
         <div className="flex flex-col space-y-2 mb-10 w-full max-w-[800px]">
           <h1 className="image-title-text text-xl">Cole’s Resume</h1>
           <Link

@@ -31,7 +31,8 @@ export const Navbar = () => {
 
           {/* Skills */}
           <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter max-w-[220px] break-words text-right">
-            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL | Ruby | TypeScript | HTML | CSS |
+            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL
+            | Ruby | TypeScript | HTML | CSS |
           </p>
         </div>
 
@@ -61,16 +62,36 @@ export const Navbar = () => {
 
         {/* Project Page Links */}
         <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[100px]">
-          <Link href="/zenterest" className={`hover:text-gray-400 no-underline${pathname === "/zenterest" ? " text-gray-400" : ""}`}>
+          <Link
+            href="/dickinson"
+            className={`hover:text-gray-400 no-underline text-right break-words${
+              pathname === "/dickinson" ? " text-gray-400" : ""
+            }`}
+          >
+            DICKINSON SUBLIME
+          </Link>
+          <Link
+            href="/zenterest"
+            className={`hover:text-gray-400 no-underline${
+              pathname === "/zenterest" ? " text-gray-400" : ""
+            }`}
+          >
             ZENTEREST
           </Link>
           <Link
             href="/babelbuilder"
-            className={`hover:text-gray-400 no-underline${pathname === "/babelbuilder" ? " text-gray-400" : ""}`}
+            className={`hover:text-gray-400 no-underline${
+              pathname === "/babelbuilder" ? " text-gray-400" : ""
+            }`}
           >
             BABELBUILDER
           </Link>
-          <Link href="/onda" className={`hover:text-gray-400 no-underline${pathname === "/onda" ? " text-gray-400" : ""}`}>
+          <Link
+            href="/onda"
+            className={`hover:text-gray-400 no-underline${
+              pathname === "/onda" ? " text-gray-400" : ""
+            }`}
+          >
             ONDA
           </Link>
         </div>
@@ -95,35 +116,62 @@ export const Navbar = () => {
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${pathname === "/" ? " text-gray-400" : " hover:text-gray-400"}`}
+              className={`text-2xl no-underline${
+                pathname === "/" ? " text-gray-400" : " hover:text-gray-400"
+              }`}
             >
               HOME
             </Link>
             <Link
+              href="/dickinson"
+              onClick={() => setIsOpen(false)}
+              className={`text-2xl no-underline${
+                pathname === "/dickinson"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
+              }`}
+            >
+              DICKINSON SUBLIME
+            </Link>
+            <Link
               href="/zenterest"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${pathname === "/zenterest" ? " text-gray-400" : " hover:text-gray-400"}`}
+              className={`text-2xl no-underline${
+                pathname === "/zenterest"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
+              }`}
             >
               ZENTEREST
             </Link>
             <Link
               href="/babelbuilder"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${pathname === "/babelbuilder" ? " text-gray-400" : " hover:text-gray-400"}`}
+              className={`text-2xl no-underline${
+                pathname === "/babelbuilder"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
+              }`}
             >
               BABELBUILDER
             </Link>
             <Link
               href="/onda"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${pathname === "/onda" ? " text-gray-400" : " hover:text-gray-400"}`}
+              className={`text-2xl no-underline${
+                pathname === "/onda" ? " text-gray-400" : " hover:text-gray-400"
+              }`}
             >
               ONDA
             </Link>
             <Link
               href="/resume"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${pathname === "/resume" ? " text-gray-400" : " hover:text-gray-400"}`}
+              className={`text-2xl no-underline${
+                pathname === "/resume"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
+              }`}
             >
               RESUME
             </Link>
@@ -133,7 +181,10 @@ export const Navbar = () => {
                 target="_blank"
                 className="flex items-center space-x-2 text-2xl no-underline hover:text-gray-400"
               >
-                <FontAwesomeIcon icon={faGithub} className="text-white w-5 h-5" />
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="text-white w-5 h-5"
+                />
                 <span>GITHUB</span>
               </Link>
               <Link
@@ -141,7 +192,10 @@ export const Navbar = () => {
                 target="_blank"
                 className="flex items-center space-x-2 text-2xl no-underline hover:text-gray-400"
               >
-                <FontAwesomeIcon icon={faLinkedin} className="text-white w-5 h-5" />
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="text-white w-5 h-5"
+                />
                 <span>LINKEDIN</span>
               </Link>
             </div>

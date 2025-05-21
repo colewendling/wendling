@@ -1,4 +1,5 @@
 // components/GradientBackground.tsx
+
 import React from "react";
 
 interface GradientBackgroundProps {
