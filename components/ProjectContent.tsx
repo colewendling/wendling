@@ -106,6 +106,33 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
           </div>
         );
 
+      case "video":
+        return (
+          <div key={key} className="w-full">
+            <h2 className="image-title-text">{block.title}</h2>
+            <FadeIn className="w-full">
+              <Modal
+                src={block.src}
+                alt={block.title || ""}
+                width={1200}
+                height={600}
+                className="w-full cursor-zoom-in shadow-none rounded-none"
+              >
+                <ScrollFade>
+                  <video
+                    src={block.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-auto object-cover shadow-card rounded-2xl"
+                  />
+                </ScrollFade>
+              </Modal>
+            </FadeIn>
+          </div>
+        );
+
       case "image":
         return (
           <div key={key}>
