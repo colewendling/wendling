@@ -1,4 +1,5 @@
 // components/TechIconGrid.tsx
+
 import React from "react";
 import ScrollFade from "./ScrollFade";
 

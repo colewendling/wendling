@@ -1,3 +1,5 @@
+// components/ScrollFade.tsx
+
 import React, { ReactNode } from "react";
 import { useInView } from "@/lib/utlis";
 

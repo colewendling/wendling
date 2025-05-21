@@ -1,3 +1,5 @@
+// components/CodeBlock.tsx
+
 "use client";
 
 import React from "react";
@@ -93,7 +95,9 @@ export default function CodeBlock({
   return (
     <div className="w-full h-full overflow-visible font-mono text-sm leading-tight">
       <h2 className="image-title-text">{title}</h2>
-      <pre className="whitespace-pre-wrap leading-tight">{renderObject(code)}</pre>
+      <pre className="whitespace-pre-wrap leading-tight">
+        {renderObject(code)}
+      </pre>
     </div>
   );
 }

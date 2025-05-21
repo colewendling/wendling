@@ -1,4 +1,5 @@
 // components/Section.tsx
+
 import React from "react";
 import AnimatedBlurBackground from "@/components/AnimatedBackground";
 
