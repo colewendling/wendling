@@ -5,16 +5,18 @@ import Section from "@/components/Section";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="flex flex-col flex-1 justify-between">
       <Section variant="animated">
         <HomeIntro />
       </Section>
-      <h1 className="text-xl tracking-widest text-white text-right px-10 opacity-70">
-        Projects
-      </h1>
-      <Section variant="solid">
-        <ProjectCards />
-      </Section>
+      <div>
+        <h1 className=" text-sm md:text-base tracking-widest text-white text-right opacity-70 px-10">
+          Projects
+        </h1>
+        <Section variant="solid">
+          <ProjectCards />
+        </Section>
+      </div>
     </div>
   );
 }

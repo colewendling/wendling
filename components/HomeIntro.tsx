@@ -2,27 +2,26 @@
 
 "use client";
 
-import React from "react"
+import React from "react";
 import TechIconGrid from "./TechIconGrid";
 
 const HomeIntro: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center text-white space-y-10 lg:space-y-0 lg:space-x-4">
-
       {/* Profile Image */}
-      <div className="w-full lg:w-1/2 px-4 lg:px-8 text-center lg:max-w-[500px]">
+      <div className="w-full lg:w-1/2 px-4 lg:px-8 text-center max-w-[250px] md:max-w-[350px] lg:max-w-[500px]">
         <div className="w-full flex justify-center">
           <img
             src="/images/general/profile.png"
             alt="Profile"
-            className="object-cover shadow-card rounded-2xl max-h-[350px]"
+            className="object-cover shadow-card rounded-2xl max-h-[450px]"
           />
         </div>
       </div>
 
       {/* Text and icon grid */}
-      <div className="flex flex-col justify-between w-full lg:w-1/2 px-4 lg:px-8 space-y-4 lg:max-w-[500px] max-w-[400px] mx-auto">
-        <p className="text-sm">
+      <div className="flex flex-col justify-between w-full lg:w-1/2 px-4 lg:px-8 space-y-4 max-w-[400px] md:max-w-[350px] lg:max-w-[500px] mx-auto">
+        <p className=" text-xs lg:text-sm opacity-80">
           I am a Fullstack Software engineer skilled in React, Redux, Javascript
           & Ruby combined with a full knowledge of backend structural logic with
           PostgreSQL and Ruby on Rails.
@@ -65,7 +64,7 @@ const HomeIntro: React.FC = () => {
           />
         </div>
 
-        <p className="text-sm">
+        <p className="text-xs lg:text-sm opacity-80">
           Solving complex problems in clever and elegant ways is my passion. I
           combine the communication and design sensibilities of my architectural
           background with strong coding skills to create new and exciting

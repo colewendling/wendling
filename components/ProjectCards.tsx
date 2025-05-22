@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <Link href={`/${slug}`}>
-      <ScrollFade className="relative w-full aspect-video overflow-hidden rounded-lg cursor-pointer">
+      <ScrollFade className="relative w-full aspect-video overflow-hidden rounded-[25px] shadow-card cursor-pointer">
         <Image
           src={thumbnail}
           alt={title}
@@ -31,9 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           unoptimized={isGif}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-lg font-semibold">
-          {title}
-        </div>
+        <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-lg font-semibold" />
       </ScrollFade>
     </Link>
   );

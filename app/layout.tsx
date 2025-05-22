@@ -45,8 +45,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${abcFavoritMono.variable} ${opticianSans.variable} ${robotoMono.variable}`}
     >
       <body className="flex flex-col min-h-screen">
-        <div className="relative flex-1 min-h-screen">
-          <main className="flex-1 overflow-auto">{children}</main>
+        <div className="relative flex flex-1 min-h-0">
+          <main className="flex flex-1 flex-col overflow-auto">{children}</main>
           <div className="absolute inset-x-0 top-0 w-[20%] h-[100%]">
             <Navbar />
           </div>

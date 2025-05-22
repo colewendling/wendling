@@ -60,8 +60,11 @@ export const Navbar = () => {
           </Link>
         </div>
 
+        {/* Spacer */}
+        <div className="flex md:h-[140px] xl:h-[180px]" />
+
         {/* Project Page Links */}
-        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest pt-[100px]">
+        <div className="flex flex-col items-end space-y-3 text-sm tracking-widest">
           <Link
             href="/dickinson"
             className={`hover:text-gray-400 no-underline text-right break-words${
