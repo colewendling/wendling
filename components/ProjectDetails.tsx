@@ -29,7 +29,6 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
     cyan: "rgb(0,255,214)",
     ruby: "rgb(230,0,35)",
   };
-  console.log(statColor)
   return (
     <>
       <div className="flex flex-col lg:flex-row items-start gap-12">
@@ -45,7 +44,7 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
             alt={title}
             width={1200}
             height={600}
-            unoptimized={header.toLowerCase().endsWith('.gif')}
+            unoptimized={header.toLowerCase().endsWith(".gif")}
             className="w-full h-auto object-contain"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-20 transition rounded-2xl" />
@@ -58,15 +57,15 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
           <div className="space-y-4 text-sm mb-6">
             {Object.entries(stats).map(([key, value]) => (
               <p key={key}>
-                <span className="font-semibold">{key}:</span>{' '}
-                {(key === "Frontend Software" || key === "Backend Software" || key === "Software") ? (
+                <span className="font-semibold">{key}:</span>{" "}
+                {key === "Frontend Software" ||
+                key === "Backend Software" ||
+                key === "Software" ? (
                   <span style={{ color: themeColorMap[statColor] }}>
                     {value}
                   </span>
                 ) : (
-                  <span className="opacity-[0.85]">
-                    {value}
-                  </span>
+                  <span className="opacity-[0.85]">{value}</span>
                 )}
               </p>
             ))}
