@@ -7,7 +7,7 @@ import { ProjectDetails } from "@/components/ProjectDetails";
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
