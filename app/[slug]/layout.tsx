@@ -2,13 +2,14 @@
 import { GradientBackground } from "@/components/GradientBackground";
 import { projects } from "@/data/projects";
 import Resume from "@/components/Resume";
+import type { ReactNode } from "react";
 
 export default async function ProjectLayout({
   params,
   children,
 }: {
-  params: { slug: string };
-  children: React.ReactNode;
+  params: Promise<{ slug: string }>;
+  children: ReactNode;
 }) {
   const { slug } = await params;
 
