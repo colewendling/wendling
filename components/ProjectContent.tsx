@@ -96,6 +96,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
                   <Image
                     src={block.src}
                     alt={block.alt || block.title}
+                    unoptimized={block.src.endsWith('.gif')}
                     width={1200}
                     height={600}
                     className="w-full h-auto object-cover shadow-card rounded-2xl"
@@ -151,6 +152,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
                   <Image
                     src={block.src}
                     alt={block.alt || ""}
+                    unoptimized={block.src.endsWith('.gif')}
                     width={600}
                     height={400}
                     className="w-full h-auto object-contain shadow-card rounded-2xl"
