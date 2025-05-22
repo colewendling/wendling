@@ -1,7 +1,16 @@
 {
   "name": "wendling",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Personal portfolio site for Cole Wendling",
+  "author": "Cole Wendling <cole@wendling.io>",
+  "contributors": [
+    {
+      "name": "Cole Wendling",
+      "email": "cole@wendling.io",
+      "url": "https://wendling.io"
+    }
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

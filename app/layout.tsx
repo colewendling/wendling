@@ -1,4 +1,5 @@
 // app/layout.tsx
+
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import type { ReactNode } from "react";
@@ -10,8 +11,31 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: "Cole Wendling - Fullstack Software Engineer",
-  description: "Portfolio site for Cole Wendling.",
+  title: "Cole Wendling",
+  description:
+    "Cole Wendling | Full Stack Software Engineer. Work samples & personal projects.",
+  authors: [{ name: "Cole Wendling" }],
+  openGraph: {
+    title: "Cole Wendling",
+    description:
+      "Cole Wendling | Full Stack Software Engineer. Work samples & personal projects.",
+    url: "https://wendling.io",
+    images: [
+      {
+        url: "/meta/social-share.jpg",
+        width: 1200,
+        height: 600,
+        alt: "Cole Wendling | Full Stack Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cole Wendling",
+    description:
+      "Cole Wendling | Full Stack Software Engineer. Work samples & personal projects.",
+    images: ["/meta/social-share.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
