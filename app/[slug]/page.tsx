@@ -34,7 +34,7 @@ export default async function ProjectPage({
         <ProjectDetails
           {...{ title, header, stats, links, linkColor, statColor }}
         />
-        <ProjectContent contentBlocks={contentBlocks} textTheme={textTheme} />
+        <ProjectContent contentBlocks={contentBlocks} textTheme={textTheme} statColor={statColor} />
       </div>
     </div>
   );
