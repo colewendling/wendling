@@ -48,25 +48,48 @@ const FadeIn: React.FC<{ children: ReactNode; className?: string }> = ({
 interface ProjectContentProps {
   contentBlocks: ContentBlock[];
   textTheme: "light" | "dark";
+  statColor: string;
 }
 
 export const ProjectContent: React.FC<ProjectContentProps> = ({
   contentBlocks,
   textTheme,
+  statColor,
 }) => {
   const renderBlock = (block: ContentBlock, key: string): ReactNode => {
     switch (block.type) {
-      case "text":
+      case "text": {
+        const classes = [
+          (block as any).isHeader ? "image-title-text" : "text-sm body-text",
+          (block as any).isHeader ? "mt-8" : "",
+          textTheme === "dark" ? "text-[rgba(189,189,189,0.82)]" : "",
+          (block as any).isList ? "mb-2" : ""
+        ]
+          .filter(Boolean)
+          .join(" ");
+        // Highlight logic
+        const content = (block as any).highlight
+          ? (() => {
+              const keywords = ["Next.js 15", "React 18", "Tailwind CSS", "Radix UI", "Sanity CMS", "NextAuth.js", "Cloudinary"];
+              const regex = new RegExp(`(${keywords.join("|")})`, 'gi');
+              const parts = block.content.split(regex);
+              return parts.map((part, idx) =>
+                regex.test(part) ? (
+                  <span key={idx} style={{ color: statColor }}>
+                    {part}
+                  </span>
+                ) : (
+                  part
+                )
+              );
+            })()
+          : block.content;
         return (
-          <p
-            key={key}
-            className={`text-sm body-text ${
-              textTheme === "dark" ? "text-[rgba(189,189,189,0.82)]" : ""
-            }`}
-          >
-            {block.content}
+          <p key={key} className={classes}>
+            {content}
           </p>
         );
+      }
 
       case "text-full":
         return (
@@ -110,7 +133,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
       case "video":
         return (
           <div key={key} className="w-full">
-            <h2 className="image-title-text">{block.title}</h2>
+            <h2 className="image-title-text mt-8">{block.title}</h2>
             <FadeIn className="w-full">
               <Modal
                 src={block.src}
@@ -135,6 +158,25 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
         );
 
       case "image":
+        if ((block as any).noShadow) {
+          return (
+            <div key={key}>
+              {block.alt && (
+                <h2 className="image-title-text mt-8">{block.alt}</h2>
+              )}
+              <FadeIn>
+                <Image
+                  src={block.src}
+                  alt={block.alt || ""}
+                  unoptimized={block.src.endsWith('.gif')}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-contain"
+                />
+              </FadeIn>
+            </div>
+          );
+        }
         return (
           <div key={key}>
             {block.alt && (
@@ -181,11 +223,23 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
             key={key}
             className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch mb-8"
           >
-            <div className="flex flex-col justify-between h-full">
+            <div
+              className={`flex flex-col ${
+                (block as any).leftCenter
+                  ? "justify-center gap-20"
+                  : "justify-between"
+              } h-full`}
+            >
               {block.left.map((b, i) => renderBlock(b, `${key}-left-${i}`))}
             </div>
             {block.right && block.right.length > 0 && (
-              <div>
+              <div
+                className={`flex flex-col ${
+                  (block as any).rightCenter
+                    ? "justify-center gap-20 md:pt-8"
+                    : "justify-between"
+                } h-full`}
+              >
                 {block.right.map((b, i) => renderBlock(b, `${key}-right-${i}`))}
               </div>
             )}
