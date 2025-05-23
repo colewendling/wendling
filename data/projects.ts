@@ -16,8 +16,8 @@ export interface Project {
 }
 
 export type ContentBlock =
-  | { type: "image"; src: string; alt?: string }
-  | { type: "text"; content: string }
+  | { type: "image"; src: string; alt?: string; noShadow?: boolean }
+  | { type: "text"; content: string; isHeader?: boolean; isList?: boolean; highlight?: boolean }
   | { type: "video"; src: string; title?: string }
   | { type: "text-full"; content: string }
   | { type: "image-full"; title: string; src: string; alt?: string }
@@ -29,7 +29,7 @@ export type ContentBlock =
       valueColor: string;
       punctuationColor: string;
     }
-  | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[] }
+  | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[]; leftCenter?: boolean; rightCenter?: boolean }
   | { type: "vectary-3d"; title: string; models: { id: string; src: string }[] }
   | {
       type: "three-col";
@@ -431,6 +431,247 @@ export const projects: Project[] = [
         type: "video",
         src: "/images/projects/dickinson/dickinson-02.mp4",
         title: "Poem Menu & Animated Modal: Themes and Motifs",
+      },
+    ],
+  },
+  {
+    slug: "texaswaterway",
+    title: "Texas Waterway",
+    thumbnail: "/images/projects/texaswaterway/texaswaterway-tn.png",
+    header: "/images/projects/texaswaterway/texaswaterway-tn.png",
+    gradientColors: [
+      "rgba(73,73,73,1)",
+      "rgba(150,82,27,1)",
+      "rgba(62,59,52,0.98)",
+    ],
+    images: [
+      "/images/projects/texaswaterway/texaswaterway-01.jpg",
+      "/images/projects/texaswaterway/texaswaterway-02.mp4",
+      "/images/projects/texaswaterway/texaswaterway-03.png",
+      "/images/projects/texaswaterway/texaswaterway-04.mp4",
+      "/images/projects/texaswaterway/texaswaterway-05.mp4",
+      "/images/projects/texaswaterway/texaswaterway-06.mp4",
+      "/images/projects/texaswaterway/texaswaterway-07.mp4",
+      "/images/projects/texaswaterway/texaswaterway-08.mp4",
+      "/images/projects/texaswaterway/texaswaterway-09.mp4",
+      "/images/projects/texaswaterway/texaswaterway-10.mp4",
+    ],
+    links: {
+      "live site": "https://texaswaterway.com",
+      github: "https://github.com/colewendling/texaswaterway",
+      wiki: "https://github.com/colewendling/texaswaterway?tab=readme-ov-file#texaswaterway",
+    },
+    stats: {
+      Type: "Full-Stack Web Application",
+      "Frontend Software": "Next.js 15, React 18, Tailwind CSS, D3-geo",
+      "Backend Software": "Sanity CMS, NextAuth.js, Cloudinary",
+      Hosting: "Vercel (SSR, ISR, CDN)",
+      Authentication: "GitHub OAuth & Email Magic Links",
+    },
+    linkColor: "ruby",
+    statColor: "cyan",
+    textTheme: "dark",
+    contentBlocks: [
+      {
+        type: "text-full",
+        content:
+          "Texas Waterway is a modern full-stack application combining live environmental data with community-driven social features. Built with Next.js 15, TypeScript, and Tailwind CSS, it offers real-time lake dashboards, interactive maps, fish species guides, and event management — all seamlessly deployed on Vercel with serverless scalability.",
+      },
+      {
+        type: "two-col",
+        left: [
+          { type: "text", content: "Key Features", isHeader: true },
+          {
+            type: "text",
+            content:
+              "• Live lake dashboards: real-time levels, weather, historical data.",
+            isList: true,
+          },
+          {
+            type: "text",
+            content:
+              "• Interactive Texas map for exploring lakes and community events.",
+            isList: true,
+          },
+          {
+            type: "text",
+            content: "• Fish species guide with detailed catch tips.",
+            isList: true,
+          },
+          {
+            type: "text",
+            content:
+              "• Social: user profiles, friend requests, event creation and RSVPs.",
+            isList: true,
+          },
+        ],
+        right: [
+          { type: "text", content: "Tech Utilization", isHeader: true },
+          {
+            type: "text",
+            content:
+              "• Next.js 15 App Router with SSR & ISR for high performance.",
+            isList: true,
+            highlight: true,
+          },
+          {
+            type: "text",
+            content:
+              "• React 18 + TypeScript for robust, type-safe components.",
+            isList: true,
+            highlight: true,
+          },
+          {
+            type: "text",
+            content:
+              "• Tailwind CSS & Radix UI for responsive, accessible styling.",
+            isList: true,
+            highlight: true,
+          },
+          {
+            type: "text",
+            content: "• Sanity CMS headless backend for structured content.",
+            isList: true,
+            highlight: true,
+          },
+          {
+            type: "text",
+            content:
+              "• NextAuth.js for OAuth & email magic-link authentication.",
+            isList: true,
+            highlight: true,
+          },
+          {
+            type: "text",
+            content:
+              "• Cloudinary for optimized media storage and CDN delivery.",
+            isList: true,
+            highlight: true,
+          },
+        ],
+      },
+      {
+        type: "video",
+        title: "Event Search & Filtering",
+        src: "/images/projects/texaswaterway/texaswaterway-02.mp4",
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "image",
+            src: "/images/projects/texaswaterway/texaswaterway-03.png",
+            alt: "Data Model & Schema Diagram",
+            noShadow: true,
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• TexasWaterway uses Sanity CMS with custom schemas for Users, Events, Lakes, and FriendRequests. These define structured fields and relations, enabling efficient, type-safe queries from Next.js server components.",
+            isList: true,
+          },
+          {
+            type: "text",
+            content:
+              "• Only structured content (Users, Events, Playlists, FriendRequests) is stored in Sanity; larger data sets like historical lake metrics (daily records since the 1940s) are managed outside Sanity for optimal performance.",
+            isList: true,
+          },
+        ],
+        rightCenter: true,
+      },
+      {
+        type: "text-full",
+        content:
+          "Texas Waterway integrates live APIs to fetch lake metrics (levels, weather) and fish species data directly from Texas state resources. These dynamic endpoints are consumed in server components, enabling charts and dashboards to reflect up-to-the-minute environmental statistics without manual refresh.",
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "image",
+            src: "/images/projects/texaswaterway/texaswaterway-04.png",
+            alt: "Live Lake Data Dashboard",
+          },
+        ],
+        right: [
+          {
+            type: "video",
+            title: "Fish Species Information & Tips",
+            src: "/images/projects/texaswaterway/texaswaterway-05.mp4",
+          },
+        ],
+      },
+      {
+        type: "video",
+        title: "User Profile & Friend Management",
+        src: "/images/projects/texaswaterway/texaswaterway-06.mp4",
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "video",
+            title: "Real-Time Event View Counter",
+            src: "/images/projects/texaswaterway/texaswaterway-07.mp4",
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• This view counter uses Next.js 15’s Partial Pre-Rendering: page content regenerates via ISR (60s cache), while counter renders per request via SSR, balancing static speed with live metrics.",
+            isList: false,
+          },
+        ],
+        rightCenter: true,
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "video",
+            title: "Custom Toast Notifications",
+            src: "/images/projects/texaswaterway/texaswaterway-08.mp4",
+          },
+        ],
+        right: [
+          {
+            type: "text",
+            content:
+              "• Custom toast notifications built with Radix UI for instant feedback on actions like friend requests, event creation and updating, and clipboard copy.",
+          },
+        ],
+        rightCenter: true,
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "video",
+            title: "Interactive Lake Map",
+            src: "/images/projects/texaswaterway/texaswaterway-09.mp4",
+          },
+        ],
+        right: [],
+      },
+      {
+        type: "two-col",
+        left: [
+          {
+            type: "video",
+            title: "Event Page Navigation",
+            src: "/images/projects/texaswaterway/texaswaterway-10.mp4",
+          },
+        ],
+        right: [],
+      },
+      {
+        type: "image-full",
+        title: "Authentication Flow & Profile Creation",
+        src: "/images/projects/texaswaterway/texaswaterway-01.jpg",
+        alt: "NextAuth login and new user creation",
       },
     ],
   },
