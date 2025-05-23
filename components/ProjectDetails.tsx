@@ -58,9 +58,14 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
             {Object.entries(stats).map(([key, value]) => (
               <p key={key}>
                 <span className="font-semibold">{key}:</span>{" "}
-                {key === "Frontend Software" ||
-                key === "Backend Software" ||
-                key === "Software" ? (
+                {[
+                  "Frontend Software",
+                  "Backend Software",
+                  "Frontend",
+                  "Backend",
+                  "Hosting",
+                  "Authentication"
+                ].includes(key) ? (
                   <span style={{ color: themeColorMap[statColor] }}>
                     {value}
                   </span>
