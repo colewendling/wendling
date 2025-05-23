@@ -66,6 +66,14 @@ export const Navbar = () => {
         {/* Project Page Links */}
         <div className="flex flex-col items-end space-y-3 text-sm tracking-widest">
           <Link
+            href="/texaswaterway"
+            className={`hover:text-gray-400 no-underline text-right break-words${
+              pathname === "/texaswaterway" ? " text-gray-400" : ""
+            }`}
+          >
+            TEXAS WATERWAY
+          </Link>
+          <Link
             href="/dickinson"
             className={`hover:text-gray-400 no-underline text-right break-words${
               pathname === "/dickinson" ? " text-gray-400" : ""
@@ -124,6 +132,17 @@ export const Navbar = () => {
               }`}
             >
               HOME
+            </Link>
+            <Link
+              href="/texaswaterway"
+              onClick={() => setIsOpen(false)}
+              className={`text-2xl no-underline${
+                pathname === "/texaswaterway"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
+              }`}
+            >
+              TEXAS WATERWAY
             </Link>
             <Link
               href="/dickinson"
