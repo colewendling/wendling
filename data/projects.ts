@@ -53,7 +53,6 @@ export const projects: Project[] = [
       "/images/projects/zenterest/zenterest-07.png",
     ],
     links: {
-      "live site": "http://www.zenterest.net/",
       github: "https://github.com/colewendling/zenterest",
       wiki: "https://github.com/colewendling/zenterest/wiki",
     },
