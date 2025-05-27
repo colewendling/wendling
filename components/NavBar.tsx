@@ -82,6 +82,22 @@ export const Navbar = () => {
             DICKINSON SUBLIME
           </Link>
           <Link
+            href="/onda"
+            className={`hover:text-gray-400 no-underline${
+              pathname === "/onda" ? " text-gray-400" : ""
+            }`}
+          >
+            ONDA
+          </Link>
+          <Link
+            href="/cactusclash"
+            className={`hover:text-gray-400 no-underline${
+              pathname === "/cactusclash" ? " text-gray-400" : ""
+            }`}
+          >
+            CACTUSCLASH
+          </Link>
+          <Link
             href="/zenterest"
             className={`hover:text-gray-400 no-underline${
               pathname === "/zenterest" ? " text-gray-400" : ""
@@ -96,14 +112,6 @@ export const Navbar = () => {
             }`}
           >
             BABELBUILDER
-          </Link>
-          <Link
-            href="/onda"
-            className={`hover:text-gray-400 no-underline${
-              pathname === "/onda" ? " text-gray-400" : ""
-            }`}
-          >
-            ONDA
           </Link>
         </div>
       </nav>
@@ -156,6 +164,24 @@ export const Navbar = () => {
               DICKINSON SUBLIME
             </Link>
             <Link
+              href="/onda"
+              onClick={() => setIsOpen(false)}
+              className={`text-2xl no-underline${
+                pathname === "/onda" ? " text-gray-400" : " hover:text-gray-400"
+              }`}
+            >
+              ONDA
+            </Link>
+            <Link
+              href="/cactusclash"
+              onClick={() => setIsOpen(false)}
+              className={`text-2xl no-underline${
+                pathname === "/cactusclash" ? " text-gray-400" : " hover:text-gray-400"
+              }`}
+            >
+              CACTUSCLASH
+            </Link>
+            <Link
               href="/zenterest"
               onClick={() => setIsOpen(false)}
               className={`text-2xl no-underline${
@@ -176,15 +202,6 @@ export const Navbar = () => {
               }`}
             >
               BABELBUILDER
-            </Link>
-            <Link
-              href="/onda"
-              onClick={() => setIsOpen(false)}
-              className={`text-2xl no-underline${
-                pathname === "/onda" ? " text-gray-400" : " hover:text-gray-400"
-              }`}
-            >
-              ONDA
             </Link>
             <Link
               href="/resume"
