@@ -61,6 +61,8 @@ export const ProjectDetails: React.FC<ProjectDetailsProps> = ({
                 {[
                   "Frontend Software",
                   "Backend Software",
+                  "Software",
+                  "Art",
                   "Frontend",
                   "Backend",
                   "Hosting",

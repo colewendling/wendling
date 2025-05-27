@@ -70,7 +70,7 @@ export const ProjectContent: React.FC<ProjectContentProps> = ({
         // Highlight logic
         const content = (block as any).highlight
           ? (() => {
-              const keywords = ["Next.js 15", "React 18", "Tailwind CSS", "Radix UI", "Sanity CMS", "NextAuth.js", "Cloudinary"];
+              const keywords = ["Next.js 15", "React 18", "React 19", "Tailwind CSS", "Radix UI", "Sanity CMS", "NextAuth.js", "Cloudinary", "Kaboom.js", "Lucide", "FontAwesome", "Vercel", "Turbopack", "Typescript"];
               const regex = new RegExp(`(${keywords.join("|")})`, 'gi');
               const parts = block.content.split(regex);
               return parts.map((part, idx) =>
