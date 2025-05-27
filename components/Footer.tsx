@@ -44,7 +44,7 @@ const Footer = () => {
                 Website
               </span>
             </a>
-            <a href="https://wendling.io/Resume" className="group relative hover:text-slate-300">
+            <a href="https://wendling.io/resume" className="group relative hover:text-slate-300">
               <FontAwesomeIcon icon={faFileLines} className="text-white text-2xl" />
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden md:group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
                 Resume
