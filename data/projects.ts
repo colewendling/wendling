@@ -17,7 +17,13 @@ export interface Project {
 
 export type ContentBlock =
   | { type: "image"; src: string; alt?: string; noShadow?: boolean }
-  | { type: "text"; content: string; isHeader?: boolean; isList?: boolean; highlight?: boolean }
+  | {
+      type: "text";
+      content: string;
+      isHeader?: boolean;
+      isList?: boolean;
+      highlight?: boolean;
+    }
   | { type: "video"; src: string; title?: string }
   | { type: "text-full"; content: string }
   | { type: "image-full"; title: string; src: string; alt?: string }
@@ -29,7 +35,13 @@ export type ContentBlock =
       valueColor: string;
       punctuationColor: string;
     }
-  | { type: "two-col"; left: ContentBlock[]; right?: ContentBlock[]; leftCenter?: boolean; rightCenter?: boolean }
+  | {
+      type: "two-col";
+      left: ContentBlock[];
+      right?: ContentBlock[];
+      leftCenter?: boolean;
+      rightCenter?: boolean;
+    }
   | { type: "vectary-3d"; title: string; models: { id: string; src: string }[] }
   | {
       type: "three-col";
@@ -429,7 +441,7 @@ export const projects: Project[] = [
       {
         type: "text-full",
         content:
-          "ONDA - Spanish for electromagnetic wave, is a digitally fabricated installation meant to showcase the power of code to create procedurally generated parametric architecture.",
+          "ONDA — Spanish for “electromagnetic wave” is a digitally fabricated installation demonstrating how code can generate complex, parametric architectural forms through procedural design.",
       },
       {
         type: "vectary-3d",
@@ -458,7 +470,7 @@ export const projects: Project[] = [
           {
             type: "text",
             content:
-              "• Recode the assembly into manageable block segments with 180+ script-generated CNC sheet layouts to minimize material waste.",
+              "• The assembly was recoded into manageable block segments, with 180+ script-generated CNC sheet layouts to minimize material waste.",
           },
         ],
       },
@@ -701,7 +713,7 @@ export const projects: Project[] = [
       {
         type: "text-full",
         content:
-          "Zenterest, a Pinterest inspired web application that allows users to create, organize and share content through personalized user boards. Zenterest’s backend & frontend were built from scratch without the aid of bootstrap or prebuilt components.",
+          "Zenterest is a Pinterest-inspired web app where users create, organize, and share content through custom boards. Both the frontend and backend were built from scratch without using Bootstrap or prebuilt components.",
       },
 
       // Full-width header image
@@ -719,12 +731,12 @@ export const projects: Project[] = [
           {
             type: "text",
             content:
-              "• Prioritize app scalability by designing a flat and seamless PostgreSQL database state shape, then implement joins-tables and many-to-many relationships within Rails backend models.",
+              "• App scalability was prioritized by designing a flat, seamless PostgreSQL database structure, followed by implementing join tables and many-to-many relationships within Rails backend models.",
           },
           {
             type: "text",
             content:
-              "• Implement AWS as a strategy to outsource images and heavy assets to streamline Heroku server connection.",
+              "• AWS was implemented to outsource images and heavy assets, streamlining the connection to the Heroku server.",
           },
           {
             type: "image",
@@ -841,19 +853,19 @@ export const projects: Project[] = [
           {
             type: "text",
             content:
-              "Babel Builder is a tower building game where a user must time their placement of flying tower segments to ensure that their tower grows as tall as possible. If the player’s segment timing is off, an overhang occurs and that part of the segment crumbles making it progressively harder as the game progresses!",
+              "Babel Builder is a tower building game where players time the placement of each falling segment to build the tallest tower possible. Misplaced pieces collapse, making the game progressively harder as the tower rises.",
           },
         ],
         right: [
           {
             type: "text",
             content:
-              "• Integrate Cannon.js to implement physics for falling blocks and fog game mechanic to simulate atmosphere as tower grows.",
+              "• Cannon.js integration simulates physics for falling blocks, with an added fog effect to enhance atmosphere as the tower rises.",
           },
           {
             type: "text",
             content:
-              "• Implement code to gradually change hue value of tower segments as the game progresses.",
+              "• Tower segment hues gradually shift, creating a sense of progression as the game advances.",
           },
         ],
       },
