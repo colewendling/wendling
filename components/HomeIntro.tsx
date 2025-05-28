@@ -22,9 +22,9 @@ const HomeIntro: React.FC = () => {
       {/* Text and icon grid */}
       <div className="flex flex-col justify-between w-full lg:w-1/2 px-4 lg:px-8 space-y-4 max-w-[400px] md:max-w-[350px] lg:max-w-[500px] mx-auto">
         <p className=" text-xs lg:text-sm opacity-80">
-          I am a Fullstack Software engineer skilled in React, Redux, Javascript
-          & Ruby combined with a full knowledge of backend structural logic with
-          PostgreSQL and Ruby on Rails.
+          Fullstack Software Engineer crafting modern web apps with Next.js,
+          React, Tailwind, and TypeScript, using Node.js, Express, and GPT APIs
+          for AI-driven features—Git-tracked and Vercel-deployed.
         </p>
 
         <div className="my-6 [&_img]:p-2">
@@ -65,10 +65,10 @@ const HomeIntro: React.FC = () => {
         </div>
 
         <p className="text-xs lg:text-sm opacity-80">
-          Solving complex problems in clever and elegant ways is my passion. I
-          combine the communication and design sensibilities of my architectural
-          background with strong coding skills to create new and exciting
-          projects.
+          With a foundation in architecture and a focus on fullstack development
+          I approach every challenge with a blend of creative thinking and
+          technical precision - creating refined applications built to scale and
+          adapt.
         </p>
       </div>
     </div>
