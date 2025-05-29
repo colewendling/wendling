@@ -186,7 +186,7 @@ export const projects: Project[] = [
           {
             type: "text",
             content:
-              "• TexasWaterway uses Sanity CMS with custom schemas for Users, Events, Lakes, and FriendRequests. These define structured fields and relations, enabling efficient, type-safe queries from Next.js server components.",
+              "• Texas Waterway uses Sanity CMS with custom schemas for Users, Events, Lakes, and FriendRequests. These define structured fields and relations, enabling efficient, type-safe queries from Next.js server components.",
             isList: true,
           },
           {
