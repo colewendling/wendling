@@ -16,7 +16,8 @@ export default function Resume() {
         <div className="flex flex-col space-y-2 mb-10 w-full max-w-[800px]">
           <h1 className="image-title-text text-xl">Cole’s Resume</h1>
           <Link
-            href="/resume.pdf"
+            href="/resume/cole-wendling-resume.pdf"
+            download
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-base uppercase underline decoration-black underline-offset-4"
@@ -28,7 +29,7 @@ export default function Resume() {
         </div>
         <div className="w-full max-w-[800px] mt-10 md:mt-0">
           <Modal
-            src="/resume/colewendling-resume.png"
+            src="/resume/cole-wendling-resume.png"
             alt="Cole Wendling Resume"
             width={800}
             height={1100}
@@ -36,7 +37,7 @@ export default function Resume() {
           >
             <ScrollFade>
               <Image
-                src="/resume/colewendling.png"
+                src="/resume/cole-wendling-resume.png"
                 alt="Cole Wendling Resume"
                 width={800}
                 height={1100}
