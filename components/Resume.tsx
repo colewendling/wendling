@@ -28,7 +28,7 @@ export default function Resume() {
         </div>
         <div className="w-full max-w-[800px] mt-10 md:mt-0">
           <Modal
-            src="/resume/colewendling.png"
+            src="/resume/colewendling-resume.png"
             alt="Cole Wendling Resume"
             width={800}
             height={1100}
