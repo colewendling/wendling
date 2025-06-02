@@ -4,7 +4,7 @@ import React from "react";
 import { useInView } from "@/lib/utlis";
 
 interface TechIconGridProps {
-  icons: { src: string; color?: string; name: string }[];
+  icons: { src: string; name: string }[];
 }
 
 const TechIconGrid: React.FC<TechIconGridProps> = ({ icons }) => {
@@ -36,9 +36,7 @@ const TechIconGrid: React.FC<TechIconGridProps> = ({ icons }) => {
             src={icon.src}
             alt={`Tech icon ${idx + 1}`}
             draggable="false"
-            className={`select-none w-full h-full object-contain ${
-              icon.color ?? ""
-            }`}
+            className="select-none w-full h-full object-contain"
           />
           <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs bg-black bg-opacity-70 text-white rounded">
             {icon.name}
