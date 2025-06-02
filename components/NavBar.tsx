@@ -31,8 +31,8 @@ export const Navbar = () => {
 
           {/* Skills */}
           <p className="mt-10 border-t border-b border-white/20 py-2 text-xs lg:text-xs font-medium tracking-tighter max-w-[220px] break-words text-right">
-            Next.js | Vercel | React | Tailwind | JavaScript | Git | PostgreSQL
-            | Ruby | TypeScript | HTML | CSS |
+            Next.js | React | JavaScript | TypeScript | Tailwind CSS | Node.js |
+            Express | PostgreSQL | AWS | Git | Vercel |
           </p>
         </div>
 
@@ -176,7 +176,9 @@ export const Navbar = () => {
               href="/cactusclash"
               onClick={() => setIsOpen(false)}
               className={`text-2xl no-underline${
-                pathname === "/cactusclash" ? " text-gray-400" : " hover:text-gray-400"
+                pathname === "/cactusclash"
+                  ? " text-gray-400"
+                  : " hover:text-gray-400"
               }`}
             >
               CACTUSCLASH

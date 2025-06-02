@@ -23,8 +23,8 @@ const HomeIntro: React.FC = () => {
       <div className="flex flex-col justify-between w-full lg:w-1/2 px-4 lg:px-8 space-y-4 max-w-[400px] md:max-w-[350px] lg:max-w-[500px] mx-auto">
         <p className=" text-xs lg:text-sm opacity-80">
           Fullstack Software Engineer crafting modern web apps with Next.js,
-          React, Tailwind, and TypeScript, using Node.js, Express, and GPT APIs
-          for AI-driven features—Git-tracked and Vercel-deployed.
+          React, TypeScript, and Tailwind CSS; powered by Node.js, Express, and
+          GPT APIs for AI driven features; Git-tracked and deployed via Vercel.
         </p>
 
         <div className="my-6 [&_img]:p-2">
@@ -32,34 +32,44 @@ const HomeIntro: React.FC = () => {
             icons={[
               {
                 src: "/icons/nextdotjs.svg",
-                name: "Next.js",
-                color: "text-green-400",
+                name: "Next.js"
               },
-              { src: "/icons/vercel.svg", name: "Vercel", color: "text-white" },
               {
                 src: "/icons/react.svg",
-                name: "React",
-                color: "text-pink-500",
+                name: "React"
               },
-              { src: "/icons/javascript.svg", name: "JavaScript" },
-              { src: "/icons/ruby.svg", name: "Ruby", color: "text-gray-300" },
               {
-                src: "/icons/postgresql.svg",
-                name: "PostgreSQL",
-                color: "text-indigo-500",
+                src: "/icons/javascript.svg",
+                name: "JavaScript"
+              },
+              {
+                src: "/icons/typescript.svg",
+                name: "TypeScript"
               },
               {
                 src: "/icons/tailwindcss.svg",
-                name: "Tailwind CSS",
-                color: "text-amber-400",
+                name: "Tailwind CSS"
               },
-              { src: "/icons/git.svg", name: "Git", color: "text-yellow-400" },
               {
-                src: "/icons/html5.svg",
-                name: "HTML5",
-                color: "text-blue-500",
+                src: "/icons/nodedotjs.svg",
+                name: "Node.js"
               },
-              { src: "/icons/css.svg", name: "CSS", color: "text-red-500" },
+              {
+                src: "/icons/express.svg",
+                name: "Express.js"
+              },
+              {
+                src: "/icons/postgresql.svg",
+                name: "PostgreSQL"
+              },
+              {
+                src: "/icons/git.svg",
+                name: "Git"
+              },
+              {
+                src: "/icons/vercel.svg",
+                name: "Vercel"
+              }
             ]}
           />
         </div>
