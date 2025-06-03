@@ -54,13 +54,13 @@ export async function generateMetadata({
       title,
       description,
       url,
-      siteName: "Cole Wendling",
       images: [
         {
           url: `https://wendling.io${project.thumbnail}`,
           alt: project.title,
         },
       ],
+      siteName: "Cole Wendling",
       type: "website",
     },
     twitter: {

@@ -28,6 +28,8 @@ export const metadata: Metadata = {
         alt: "Cole Wendling | Full Stack Software Engineer",
       },
     ],
+    siteName: "Cole Wendling",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
