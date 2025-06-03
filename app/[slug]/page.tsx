@@ -19,7 +19,7 @@ export async function generateMetadata({
     };
   }
   const title = `${project.title} | Cole Wendling`;
-  const description = `Project page for ${project.title} by Cole Wendling.`;
+  const description = project.description;
   const url = `https://wendling.io/${slug}`;
   return {
     title,

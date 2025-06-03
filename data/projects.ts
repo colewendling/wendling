@@ -3,6 +3,7 @@
 export interface Project {
   slug: string;
   title: string;
+  description: string;
   thumbnail: string;
   header: string;
   gradientColors: [string, string, string];
@@ -53,6 +54,7 @@ export const projects: Project[] = [
   {
     slug: "texaswaterway",
     title: "Texas Waterway",
+    description: "Texas Waterway is a comprehensive lake analytics platform connecting 187+ Texas lake communities with live data on lake levels, storage, weather, and fishing insights.",
     thumbnail: "/images/projects/texaswaterway/texaswaterway-tn.png",
     header: "/images/projects/texaswaterway/texaswaterway-tn.png",
     gradientColors: [
@@ -295,6 +297,7 @@ export const projects: Project[] = [
   {
     slug: "dickinson",
     title: "The Dickinson Sublime",
+    description: "The Dickinson Sublime is an interactive 3D visualization of Emily Dickinson’s 1,775 poems rendered as relational nodes using Three.js, exploring thematic links.",
     thumbnail: "/images/projects/dickinson/dickinson-tn.gif",
     header: "/images/projects/dickinson/dickinson-tn.gif",
     gradientColors: ["#5e373d", "#1c4966", "rgba(103, 42, 42, 0.91)"],
@@ -411,6 +414,7 @@ export const projects: Project[] = [
   {
     slug: "onda",
     title: "Onda",
+    description: "ONDA is a digitally fabricated installation using procedural design to generate complex architectural forms. Built with JavaScript and CNC scripts at UT Austin.",
     thumbnail: "/images/projects/onda/onda-tn.png",
     header: "/images/projects/onda/onda-01.jpg",
     gradientColors: [
@@ -495,6 +499,7 @@ export const projects: Project[] = [
   {
     slug: "cactusclash",
     title: "Cactus Clash",
+    description: "Cactus Clash is a cowboy-themed arcade jumper with procedural enemies, timed jumps, and resource management. Built with Next.js and Kaboom.js for gameplay.",
     thumbnail: "/images/projects/cactusclash/cactusclash-tn.png",
     header: "/images/projects/cactusclash/cactusclash-tn.png",
     gradientColors: [
@@ -685,6 +690,7 @@ export const projects: Project[] = [
   {
     slug: "zenterest",
     title: "Zenterest",
+    description: "Zenterest is a Pinterest-inspired web and mobile app for creating, organizing, and sharing content. Built with React, React Native, Rails, and PostgreSQL.",
     thumbnail: "/images/projects/zenterest/zenterest-tn.gif",
     header: "/images/projects/zenterest/zenterest-01.png",
     gradientColors: ["#4b4b4b", "#871313", "rgba(21, 21, 21, 0.91)"],
@@ -824,6 +830,7 @@ export const projects: Project[] = [
   {
     slug: "babelbuilder",
     title: "Babel Builder",
+    description: "Babel Builder is a tower-building game where players time falling segments to prevent collapse, balancing precision and physics. Built with JavaScript and Cannon.js.",
     thumbnail: "/images/projects/babelbuilder/babelbuilder-tn.png",
     header: "/images/projects/babelbuilder/babelbuilder-01.gif",
     gradientColors: [
