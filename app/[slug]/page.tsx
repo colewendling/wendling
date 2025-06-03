@@ -11,14 +11,40 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "resume") {
+    return {
+      title: "Cole Wendling | Resume",
+      description: "Download the PDF resume of Cole Wendling, Fullstack Software Engineer.",
+      openGraph: {
+        title: "Cole Wendling | Resume",
+        description: "Download the PDF resume of Cole Wendling, Fullstack Software Engineer.",
+        url: "https://wendling.io/resume",
+        images: [
+          {
+            url: "https://wendling.io/meta/social-share.jpg",
+            alt: "Cole Wendling Resume",
+          },
+        ],
+        siteName: "Cole Wendling",
+        type: "website",
+      },
+      twitter: {
+        title: "Cole Wendling | Resume",
+        description: "Download the PDF resume of Cole Wendling, Fullstack Software Engineer.",
+        images: ["https://wendling.io/meta/social-share.jpg"],
+        card: "summary_large_image",
+      },
+      alternates: { canonical: "https://wendling.io/resume" },
+    };
+  }
   const project = projects.find((p) => p.slug === slug);
   if (!project) {
     return {
-      title: "Project Not Found | Cole Wendling",
+      title: "Cole Wendling | Project Not Found",
       description: "No project found for this slug.",
     };
   }
-  const title = `${project.title} | Cole Wendling`;
+  const title = `Cole Wendling | ${project.title}`;
   const description = project.description;
   const url = `https://wendling.io/${slug}`;
   return {
