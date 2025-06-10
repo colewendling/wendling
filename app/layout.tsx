@@ -9,6 +9,7 @@ import { Navbar } from "@/components/NavBar";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Cole Wendling",
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
